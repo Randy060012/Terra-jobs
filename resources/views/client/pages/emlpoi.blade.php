@@ -7,7 +7,7 @@
             <h2>Job In Grid</h2>
             <p><a href="{{route('index')}}" title="Home">Accueil</a> <i class="ti-angle-double-right"></i> Job Layout One</p>
         </div>
-    </div>
+    </div>  
 </div>
 <!-- ======================= End Page Title ===================== -->
 
