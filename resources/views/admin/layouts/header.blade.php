@@ -1,5 +1,5 @@
 <div class="nav-header">
-    <a href="index.html" class="brand-logo">
+    <a href="{{url('admin/dashboard')}}" class="brand-logo">
         <svg class="logo-abbr" width="40" height="40" viewBox="0 0 48 54" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect y="3" width="48" height="48" rx="16" fill="#FB7D5B"/>
             <path d="M28.964 35.536H19.532L18.02 40H11.576L20.72 14.728H27.848L36.992 40H30.476L28.964 35.536ZM27.38 30.784L24.248 21.532L21.152 30.784H27.38Z" fill="white"/>
@@ -8,9 +8,9 @@
             <svg width="140" height="30" viewBox="0 0 167 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.964 24.536H8.532L7.02 29H0.576L9.72 3.728H16.848L25.992 29H19.476L17.964 24.536ZM16.38 19.784L13.248 10.532L10.152 19.784H16.38ZM41.051 29L34.931 20.576V29H28.775V2.36H34.931V17.084L41.015 8.912H48.611L40.259 18.992L48.683 29H41.051ZM49.8049 18.92C49.8049 16.856 50.1889 15.044 50.9569 13.484C51.7489 11.924 52.8169 10.724 54.1609 9.884C55.5049 9.044 57.0049 8.624 58.6609 8.624C60.0769 8.624 61.3129 8.912 62.3689 9.488C63.4489 10.064 64.2769 10.82 64.8529 11.756V8.912H71.0089V29H64.8529V26.156C64.2529 27.092 63.4129 27.848 62.3329 28.424C61.2769 29 60.0409 29.288 58.6249 29.288C56.9929 29.288 55.5049 28.868 54.1609 28.028C52.8169 27.164 51.7489 25.952 50.9569 24.392C50.1889 22.808 49.8049 20.984 49.8049 18.92ZM64.8529 18.956C64.8529 17.42 64.4209 16.208 63.5569 15.32C62.7169 14.432 61.6849 13.988 60.4609 13.988C59.2369 13.988 58.1929 14.432 57.3289 15.32C56.4889 16.184 56.0689 17.384 56.0689 18.92C56.0689 20.456 56.4889 21.68 57.3289 22.592C58.1929 23.48 59.2369 23.924 60.4609 23.924C61.6849 23.924 62.7169 23.48 63.5569 22.592C64.4209 21.704 64.8529 20.492 64.8529 18.956ZM74.2385 18.92C74.2385 16.856 74.6225 15.044 75.3905 13.484C76.1825 11.924 77.2505 10.724 78.5945 9.884C79.9385 9.044 81.4385 8.624 83.0945 8.624C84.4145 8.624 85.6145 8.9 86.6945 9.452C87.7985 10.004 88.6625 10.748 89.2865 11.684V2.36H95.4425V29H89.2865V26.12C88.7105 27.08 87.8825 27.848 86.8025 28.424C85.7465 29 84.5105 29.288 83.0945 29.288C81.4385 29.288 79.9385 28.868 78.5945 28.028C77.2505 27.164 76.1825 25.952 75.3905 24.392C74.6225 22.808 74.2385 20.984 74.2385 18.92ZM89.2865 18.956C89.2865 17.42 88.8545 16.208 87.9905 15.32C87.1505 14.432 86.1185 13.988 84.8945 13.988C83.6705 13.988 82.6265 14.432 81.7625 15.32C80.9225 16.184 80.5025 17.384 80.5025 18.92C80.5025 20.456 80.9225 21.68 81.7625 22.592C82.6265 23.48 83.6705 23.924 84.8945 23.924C86.1185 23.924 87.1505 23.48 87.9905 22.592C88.8545 21.704 89.2865 20.492 89.2865 18.956ZM118.832 18.632C118.832 19.208 118.796 19.808 118.724 20.432H104.792C104.888 21.68 105.284 22.64 105.98 23.312C106.7 23.96 107.576 24.284 108.608 24.284C110.144 24.284 111.212 23.636 111.812 22.34H118.364C118.028 23.66 117.416 24.848 116.528 25.904C115.664 26.96 114.572 27.788 113.252 28.388C111.932 28.988 110.456 29.288 108.824 29.288C106.856 29.288 105.104 28.868 103.568 28.028C102.032 27.188 100.832 25.988 99.9681 24.428C99.1041 22.868 98.6721 21.044 98.6721 18.956C98.6721 16.868 99.0921 15.044 99.9321 13.484C100.796 11.924 101.996 10.724 103.532 9.884C105.068 9.044 106.832 8.624 108.824 8.624C110.768 8.624 112.496 9.032 114.008 9.848C115.52 10.664 116.696 11.828 117.536 13.34C118.4 14.852 118.832 16.616 118.832 18.632ZM112.532 17.012C112.532 15.956 112.172 15.116 111.452 14.492C110.732 13.868 109.832 13.556 108.752 13.556C107.72 13.556 106.844 13.856 106.124 14.456C105.428 15.056 104.996 15.908 104.828 17.012H112.532ZM147.712 8.696C150.208 8.696 152.188 9.452 153.652 10.964C155.14 12.476 155.884 14.576 155.884 17.264V29H149.764V18.092C149.764 16.796 149.416 15.8 148.72 15.104C148.048 14.384 147.112 14.024 145.912 14.024C144.712 14.024 143.764 14.384 143.068 15.104C142.396 15.8 142.06 16.796 142.06 18.092V29H135.94V18.092C135.94 16.796 135.592 15.8 134.896 15.104C134.224 14.384 133.288 14.024 132.088 14.024C130.888 14.024 129.94 14.384 129.244 15.104C128.572 15.8 128.236 16.796 128.236 18.092V29H122.08V8.912H128.236V11.432C128.86 10.592 129.676 9.932 130.684 9.452C131.692 8.948 132.832 8.696 134.104 8.696C135.616 8.696 136.96 9.02 138.136 9.668C139.336 10.316 140.272 11.24 140.944 12.44C141.64 11.336 142.588 10.436 143.788 9.74C144.988 9.044 146.296 8.696 147.712 8.696ZM163.285 6.824C162.205 6.824 161.317 6.512 160.621 5.888C159.949 5.24 159.613 4.448 159.613 3.512C159.613 2.552 159.949 1.76 160.621 1.136C161.317 0.487998 162.205 0.163998 163.285 0.163998C164.341 0.163998 165.205 0.487998 165.877 1.136C166.573 1.76 166.921 2.552 166.921 3.512C166.921 4.448 166.573 5.24 165.877 5.888C165.205 6.512 164.341 6.824 163.285 6.824ZM166.345 8.912V29H160.189V8.912H166.345Z" fill="white"/>
             </svg>
-        </div> 
+        </div>
     </a>
-    
+
 
     <div class="nav-control">
         <div class="hamburger">
@@ -25,7 +25,7 @@
                 <rect y="11" width="4" height="4" rx="2" fill="#2A353A"/>
                 <rect x="22" y="22" width="4" height="4" rx="2" fill="#2A353A"/>
                 <rect y="22" width="4" height="4" rx="2" fill="#2A353A"/>
-            </svg>		
+            </svg>
         </div>
     </div>
 </div>
@@ -259,7 +259,7 @@
                         <div>
                             <h6 class="mb-1">Chat with Khelesh</h6>
                             <p class="mb-0 text-success">Online</p>
-                        </div>							
+                        </div>
                         <div class="dropdown">
                             <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1" >
@@ -581,11 +581,11 @@
                                              <svg id="icon-minimize" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="A098AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minimize"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path></svg>
                                           </a>
                                         </li>
-                                                        
+
                                     </ul>
                                 </div>
                             </div>
-                        
+
                         </div>
                 </li>
                     <li class="nav-item dropdown notification_dropdown search-area-header">
@@ -593,7 +593,7 @@
                             <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M27.6 25.8L22 20.2C23.3 18.5 24.1 16.4 24.1 14.1C24.1 8.60001 19.6 4.10001 14.1 4.10001C8.6 4.10001 4 8.60001 4 14.1C4 19.6 8.5 24.1 14 24.1C16.3 24.1 18.5 23.3 20.2 21.9L25.8 27.5C26 27.7 26.4 27.9 26.7 27.9C27 27.9 27.3 27.8 27.6 27.5C28.1 27.1 28.1 26.3 27.6 25.8ZM6.5 14.1C6.5 10 9.9 6.60001 14 6.60001C18.1 6.60001 21.5 10 21.5 14.1C21.5 18.2 18.1 21.6 14 21.6C9.9 21.6 6.5 18.3 6.5 14.1Z" fill="#A098AE"/>
                             </svg>
-                        
+
                         </a>
                         <div class="dropdown-menu dropdown-menu-end p-0 rounded">
                             <div class="card mb-0">
@@ -614,7 +614,7 @@
                                             <li>
                                                 <img src="images/avatar/1.jpg" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
-                                                
+
                                             </li>
                                             <li class="ms-auto"><i class="fa-solid fa-trash"></i></li>
                                         </ul>
@@ -629,7 +629,7 @@
                                             <li>
                                                 <img src="images/avatar/1.jpg" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Lucas</a>
-                                                
+
                                             </li>
                                             <li class="ms-auto"><i class="fa-solid fa-trash"></i></li>
                                         </ul>
@@ -637,7 +637,7 @@
                                             <li>
                                                 <img src="images/avatar/2.jpg" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
-                                                
+
                                             </li>
                                             <li class="ms-auto"><i class="fa-solid fa-trash"></i></li>
                                         </ul>
@@ -645,7 +645,7 @@
                                             <li>
                                                 <img src="images/avatar/4.jpg" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
-                                                
+
                                             </li>
                                             <li class="ms-auto"><i class="fa-solid fa-trash"></i></li>
                                         </ul>
@@ -653,7 +653,7 @@
                                             <li>
                                                 <img src="images/avatar/3.jpg" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
-                                                
+
                                             </li>
                                             <li class="ms-auto"><i class="fa-solid fa-trash"></i></li>
                                         </ul>
@@ -661,7 +661,7 @@
                                             <li>
                                                 <img src="images/avatar/2.jpg" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
-                                                
+
                                             </li>
                                             <li class="ms-auto"><i class="fa-solid fa-trash"></i></li>
                                         </ul>
@@ -669,7 +669,7 @@
                                             <li>
                                                 <img src="images/avatar/1.jpg" class="avatar avatar-sm" alt="">
                                                 <a href="javascript:void(0);" class="ms-2">Benjamin</a>
-                                                
+
                                             </li>
                                             <li class="ms-auto"><i class="fa-solid fa-trash"></i></li>
                                         </ul>
@@ -695,17 +695,17 @@
                             <svg id="icon-minimize-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="A098AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minimize"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path></svg>
                         </a>
                     </li>
-                    
+
                     <li class="nav-item dropdown notification_dropdown">
                         <a class="nav-link bell-link" href="javascript:void(0);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A098AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>						
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A098AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                         </a>
-                    </li>		
+                    </li>
                     <li class="nav-item bell-icon blink dropdown notification_dropdown">
                         <a class="nav-link  " href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
                     <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M25.3677 18.9391V9.86768C25.3677 4.70215 21.1655 0.5 16 0.5C10.8345 0.5 6.63232 4.70215 6.63232 9.86768V18.9397C4.96704 19.4224 3.73828 20.9544 3.73828 22.8374C3.73828 25.0386 5.5293 26.8296 7.73096 26.8296H11.377V26.877C11.377 29.4263 13.4507 31.5 16 31.5C18.5493 31.5 20.6231 29.4263 20.6231 26.8769V26.8296H24.2691C26.4707 26.8296 28.2617 25.0386 28.2617 22.7583C28.2617 20.9406 27.033 19.4198 25.3677 18.9391ZM9.63232 9.86768C9.63232 6.35645 12.4888 3.5 16 3.5C19.5112 3.5 22.3677 6.35645 22.3677 9.86768V18.7661H9.63232V9.86768ZM17.6231 26.8769C17.6231 27.772 16.895 28.5 16 28.5C15.105 28.5 14.377 27.772 14.377 26.8769V26.8296H17.623V26.8769H17.6231ZM24.269 23.8296H7.73096C7.1836 23.8296 6.73828 23.3843 6.73828 22.7583C6.73828 22.2114 7.18359 21.7661 7.73096 21.7661H24.2691C24.8164 21.7661 25.2617 22.2114 25.2617 22.8374C25.2617 23.3843 24.8164 23.8296 24.269 23.8296Z" fill="#A098AE"/>
-                        </svg>		
+                        </svg>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end of-visible">
                             <div class="dropdown-header">
@@ -785,7 +785,7 @@
                             <a class="all-notification" href="javascript:void(0);">See all notifications <i class="ti-arrow-end"></i></a>
                         </div>
                     </li>
-                    
+
                     <li class="nav-item dropdown notification_dropdown">
                         <a class="nav-link me-0 " href="javascript:void(0);" data-bs-toggle="dropdown">
                             <svg width="20" class="setting-svg" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -853,7 +853,7 @@
                             <a class="nav-link ms-0" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="header-info2 d-flex align-items-center">
                                     <div class="d-flex align-items-center sidebar-info">
-                                        
+
                                     </div>
                                     <img src="images/user.jpg" alt="">
                                 </div>
@@ -929,5 +929,5 @@
             </div>
         </nav>
     </div>
-    
+
 </div>

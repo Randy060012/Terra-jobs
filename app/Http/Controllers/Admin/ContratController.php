@@ -93,11 +93,18 @@ class ContratController extends Controller
         }
 
         // Gestion du fichier
-        if ($request->hasFile('file')) {
-            $file = $request->file('file');
-            $filePath = '/uploadedFiles/' . "file_" . time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploadedFiles'), $filePath);
-            $contrat->file = $filePath;
+        // if ($request->hasFile('file')) {
+        //     $file = $request->file('file');
+        //     $filePath = '/uploadedFiles/' . "file_" . time() . '_' . $file->getClientOriginalName();
+        //     $file->move(public_path('uploadedFiles'), $filePath);
+        //     $contrat->fichier = $filePath;
+        // }
+
+        if ($request->hasFile('fichier')) {
+            $file_image = $request->file('fichier');
+            $file_name_image = "file" . time() . '_' . $file_image->getClientOriginalName();
+            $file_image->move(public_path('produitImage'), $file_name_image);
+            $contrat->fichier = $file_name_image;
         }
 
         // Enregistrement du contrat
@@ -128,7 +135,13 @@ class ContratController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Récupère le contrat spécifique par son ID
+        $data = Contrat::find($id);
+        $categories = Categorie::all();
+        $domaines = Domaine::all();
+        $types = TypeDeContrat::all();
+        $users = User::all();
+        return view('admin.pages.contrat.edit', compact('data', 'categories', 'domaines', 'types', 'users'));
     }
 
     /**
@@ -141,6 +154,38 @@ class ContratController extends Controller
     public function update(Request $request, $id)
     {
         //
+        //dd($request);
+        $contrat = Contrat::find($id);
+        $contrat->user_id = $request->input('user_id');
+        $contrat->domaine_id = $request->input('domaine_id');
+        $contrat->type_de_contrat_id = $request->input('type_de_contrat_id');
+        $contrat->categorie_id = $request->input('categorie_id');
+        $contrat->titre = $request->input('titre');
+        $contrat->description = $request->input('description');
+        $contrat->date_limite = $request->input('date_limite');
+
+        // Gestion de l'image
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagePath = '/produitImage/' . "images" . time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('produitImage'), $imagePath);
+            $contrat->image = $imagePath;
+        }
+
+        // Gestion du fichier
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $filePath = '/uploadedFiles/' . "file_" . time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploadedFiles'), $filePath);
+            $contrat->fichier = $filePath;
+        }
+
+        // Enregistrement du contrat
+        if ($contrat->save()) {
+            return back()->with('success', 'Contrat modifié avec succès.');
+        } else {
+            return back()->with('danger', 'Problème lors de la modification du contrat.');
+        }
     }
 
     /**
@@ -152,5 +197,14 @@ class ContratController extends Controller
     public function destroy($id)
     {
         //
+        $contrat = Contrat::find($id);
+        if (!$contrat) {
+            return back()->with('danger', 'contrat non trouvée');
+        }
+        if ($contrat->delete()) {
+            return back()->with('success', 'contrat supprimé avec succès');
+        } else {
+            return back()->with('danger', 'Problème lors de la suppression d\'un contrat');
+        }
     }
 }

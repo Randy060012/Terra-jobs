@@ -38,6 +38,7 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="stylesheet" href=" {{asset('admin/sweetalerte2/sweetalert2.min.css')}}">
     <link rel="stylesheet" href=" {{asset('admin/toastr/toastr.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -165,6 +166,7 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <script src="{{URL::asset('admin/vendor/global/global.min.js')}}"></script>
     <script src="{{URL::asset('admin/vendor/chart.js/Chart.bundle.min.js')}}"></script>
     <script src="{{URL::asset('admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
@@ -194,6 +196,8 @@
     <script src="{{URL::asset('admin/js/styleSwitcher.js')}}"></script>
     <script src=" {{asset('admin/sweetalerte2/sweetalert2.min.js')}} "></script>
     <script src=" {{asset('admin/toastr/toastr.min.js')}} "></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @yield('scripts')
     @stack('script')
 

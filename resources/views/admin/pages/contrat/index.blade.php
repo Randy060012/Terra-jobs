@@ -46,14 +46,31 @@
                                                         </td>
                                                         <td>{{$data->titre}}</td>
                                                         <td>{{$data->domaine->libelle}}</td>
-                                                        <td>{{$data->categorie->libelle}}</td>
-                                                        <td></td>
+                                                        <td>{{$data->categorie == null ? '' : $data->categorie->libelle}}</td>
+                                                        <td class="text-center">
+                                                            <div class="d-flex justify-content-center align-items-center gap-2">
+                                                                <div class="d-flex">
+                                                                    <a href="{{route('edit-contrat', $data->id)}}" class="btn btn-primary shadow btn-xl sharp me-1 ">
+                                                                        <i class="fas fa-pencil-alt"></i>
+                                                                    </a>
+                                                                    <div class="remove">
+                                                                        <button class="btn btn-sm btn-danger btn-xl sharp" onclick="confirmDelete('{{ $data->id }}')">
+                                                                            <i class="fa fa-trash"></i>
+                                                                        </button>
+                                                                        <form id="form-{{ $data->id }}" action="{{route('delete-contrat', $data->id) }}" method="post">
+                                                                            @csrf
+                                                                            @method('DELETE')
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                       <th>ID</th>
+                                                        <th>ID</th>
                                                         <th>Image</th>
                                                         <th>Titre</th>
                                                         <th>Domaine</th>
@@ -86,22 +103,8 @@
 
 @endsection
 @section('scripts')
-
 <script>
-    function updateDomaine(data) {
-        let parsedData = JSON.parse(data)
-        console.log('clik', parsedData)
-        $('#libelle_edit').val(parsedData.libelle);
-        $('#description_edit').val(parsedData.description);
-        $('#domaine_id').val(parsedData.id);
-    }
-    $(document).ready(function() {
-        $(document).on('click', '.editbtn', function() {
-            $('#modification').modal('show');
-        });
-    });
-
-    function confirmDelete(domaineId) {
+    function confirmDelete(contratId) {
         Swal.fire({
             title: 'Êtes-vous sûr?',
             text: 'Cette action est irréversible!',
@@ -113,12 +116,11 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 // Si l'utilisateur confirme, soumettre le formulaire de suppression
-                document.getElementById('form-' + domaineId).submit();
+                document.getElementById('form-' + contratId).submit();
             }
         });
     }
 </script>
-
 @endsection
 @push('script')
 @if(Session::has('success'))

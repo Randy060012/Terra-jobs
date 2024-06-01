@@ -92,9 +92,7 @@ class CategorieController extends Controller
         ]);
         $categorie_id = $request->input('categorie_id');
         $categorie = Categorie::find($categorie_id);
-
         if (!$categorie) {
-            // Si la Niveau n'existe pas, retourner avec un message d'erreur
             return back()->with('danger', 'Categorie non trouvé');
         }
         $categorie->libelle = $validatedData['libelle'];

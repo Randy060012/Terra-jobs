@@ -9,6 +9,17 @@
             </li>
 
             <li>
+                <a class="has-arrow " aria-expanded="false" href="#" aria-expanded="false">
+                    <i class="material-symbols-outlined">all_inbox</i>
+                    <span class="nav-text">Contrat</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{route('index-contrat')}}">Listes</a></li>
+                    <li><a href="{{route('ajout-contrat')}}">Nouveau</a></li>
+                </ul>
+            </li>
+
+            <li>
                 <a href="{{route('index-domaine')}}" aria-expanded="false">
                     <i class="material-symbols-outlined">all_inbox</i>
                     <span class="nav-text">Domaines</span>
@@ -26,13 +37,6 @@
                 <a href="{{route('index-type-contrat')}}" aria-expanded="false">
                     <i class="material-symbols-outlined">all_inbox</i>
                     <span class="nav-text">Type de contrat</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="{{route('index-contrat')}}" aria-expanded="false">
-                    <i class="material-symbols-outlined">all_inbox</i>
-                    <span class="nav-text">Contrat</span>
                 </a>
             </li>
 

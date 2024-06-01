@@ -93,9 +93,7 @@ class TyeContratController extends Controller
         ]);
         $type_id = $request->input('type_id');
         $type = TypeDeContrat::find($type_id);
-
         if (!$type) {
-            // Si la Niveau n'existe pas, retourner avec un message d'erreur
             return back()->with('danger', 'Type de contrat non trouvé');
         }
         $type->libelle = $validatedData['libelle'];

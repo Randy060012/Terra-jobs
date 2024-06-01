@@ -44,14 +44,14 @@
                                                         <td class="text-center">
                                                             <div class="d-flex justify-content-center align-items-center gap-2">
                                                                 <div class="d-flex">
-                                                                    <a href="#" class="btn btn-primary shadow btn-xl sharp me-1 editbtn" data-bs-target="#modification" data-bs-toggle="modal" onclick="updateTypeContrat('{{ json_encode($data) }}')">
+                                                                    <a href="#" class="btn btn-primary shadow btn-xl sharp me-1 editbtn" data-bs-target="#modification" data-bs-toggle="modal" onclick="updateCategorie('{{ json_encode($data, JSON_HEX_APOS | JSON_HEX_QUOT) }}')">
                                                                         <i class="fas fa-pencil-alt"></i>
                                                                     </a>
                                                                     <div class="remove">
-                                                                        <button class="btn btn-sm btn-danger btn-xl sharp" onclick="confirmDelete('{{ $data->id }}')">
+                                                                        <button class="btn btn-sm btn-danger btn-xl sharp" onclick="confirmDelete('{{$data->id}}')">
                                                                             <i class="fa fa-trash"></i>
                                                                         </button>
-                                                                        <form id="form-{{ $data->id }}" action="{{route('delete-categorie', $data->id) }}" method="post">
+                                                                        <form id="form-{{$data->id}}" action="{{route('delete-categorie', $data->id) }}" method="post">
                                                                             @csrf
                                                                             @method('DELETE')
                                                                         </form>
@@ -169,7 +169,6 @@
 
 @endsection
 @section('scripts')
-
 <script>
     function updateCategorie(data) {
         let parsedData = JSON.parse(data)

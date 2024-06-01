@@ -10,7 +10,7 @@ class DomaineController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -92,9 +92,7 @@ class DomaineController extends Controller
         ]);
         $domaine_id = $request->input('domaine_id');
         $domaine = Domaine::find($domaine_id);
-
         if (!$domaine) {
-            // Si la Niveau n'existe pas, retourner avec un message d'erreur
             return back()->with('danger', 'Domaine non trouvé');
         }
         $domaine->libelle = $validatedData['libelle'];
