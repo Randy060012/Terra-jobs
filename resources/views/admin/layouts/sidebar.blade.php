@@ -10,7 +10,7 @@
 
             <li>
                 <a class="has-arrow " aria-expanded="false" href="#" aria-expanded="false">
-                    <i class="material-symbols-outlined">all_inbox</i>
+                    <i class="material-symbols-outlined">description</i>
                     <span class="nav-text">Contrat</span>
                 </a>
                 <ul aria-expanded="false">
@@ -21,21 +21,21 @@
 
             <li>
                 <a href="{{route('index-domaine')}}" aria-expanded="false">
-                    <i class="material-symbols-outlined">all_inbox</i>
+                    <i class="material-symbols-outlined">work</i>
                     <span class="nav-text">Domaines</span>
                 </a>
             </li>
 
             <li>
                 <a href="{{route('index-categorie')}}" aria-expanded="false">
-                    <i class="material-symbols-outlined">all_inbox</i>
-                    <span class="nav-text">Categories</span>
+                    <i class="material-symbols-outlined">list</i>
+                    <span class="nav-text">Catégories</span>
                 </a>
             </li>
 
             <li>
                 <a href="{{route('index-type-contrat')}}" aria-expanded="false">
-                    <i class="material-symbols-outlined">all_inbox</i>
+                    <i class="material-symbols-outlined">edit_document</i>
                     <span class="nav-text">Type de contrat</span>
                 </a>
             </li>

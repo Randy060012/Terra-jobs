@@ -114,7 +114,7 @@
                                                 <label for="imageUpload" class="form-label text-primary">Image de Couverture<span class="required">*</span></label>
                                                 <div class="avatar-upload">
                                                     <div class="change-btn mt-1">
-                                                        <input name="image" type='file' class="form-control d-none" id="imageUpload" accept=".png, .jpg, .jpeg" onchange="previewImage(event)">
+                                                        <input  value="{{ asset('produitImage/' . $data->image) }}" name="image" type='file' class="form-control d-none" id="imageUpload" accept=".png, .jpg, .jpeg" onchange="previewImage(event)">
                                                         <label for="imageUpload" class="dlab-upload mb-0 btn btn-primary btn-sm">Choose File</label>
                                                         <a href="javascript:void(0);" class="btn btn-danger light remove-img ms-2 btn-sm" onclick="removeImage()">Remove</a>
                                                     </div>
@@ -124,7 +124,7 @@
                                                 <label for="pdfUpload" class="form-label text-primary">Fichier PDF<span class="required">*</span></label>
                                                 <div class="avatar-upload">
                                                     <div class="change-btn mt-1">
-                                                        <input name="pdf" type='file' class="form-control d-none" id="pdfUpload" accept=".pdf">
+                                                        <input value="{{ asset('produitImage/' . $data->fichier) }}" name="fichier" type='file' class="form-control d-none" id="pdfUpload" accept=".pdf">
                                                         <label for="pdfUpload" class="dlab-upload mb-0 btn btn-primary btn-sm">Choose File</label>
                                                         <a href="javascript:void(0);" class="btn btn-danger light remove-pdf ms-2 btn-sm" onclick="removePDF()">Remove</a>
                                                     </div>

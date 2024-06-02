@@ -92,14 +92,6 @@ class ContratController extends Controller
             $contrat->image = $imagePath;
         }
 
-        // Gestion du fichier
-        // if ($request->hasFile('file')) {
-        //     $file = $request->file('file');
-        //     $filePath = '/uploadedFiles/' . "file_" . time() . '_' . $file->getClientOriginalName();
-        //     $file->move(public_path('uploadedFiles'), $filePath);
-        //     $contrat->fichier = $filePath;
-        // }
-
         if ($request->hasFile('fichier')) {
             $file_image = $request->file('fichier');
             $file_name_image = "file" . time() . '_' . $file_image->getClientOriginalName();
