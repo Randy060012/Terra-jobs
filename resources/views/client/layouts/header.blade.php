@@ -9,8 +9,15 @@
                 <li class="dropdown active"> <a href="{{route('index')}}">Accuiel</a> </li>
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opportunite</a>
                     <ul class="dropdown-menu animated fadeOutUp">
-                        <li><a href="{{route('emlpoi')}}">Emlpois</a></li>
-                        <li><a href="{{route('stage')}}">Stages</a></li>
+                        @php
+                        use App\Models\Categorie;
+                        $categories = Categorie::all();
+                        @endphp
+                        @foreach ($categories as $categorie)
+                        <li data-id="{{ $categorie->id }}"><a>{{ $categorie->libelle }}</a></li>
+                        @endforeach
+                         <!-- <li><a href="{{route('emlpoi')}}">Emlpois</a></li>
+                        <li><a href="{{route('stage')}}">Stages</a></li> -->
                     </ul>
                 </li>
                 <li class="dropdown"> <a href="contact.html">Nos-services</a> </li>
