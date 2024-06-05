@@ -14,11 +14,14 @@
                         $categories = Categorie::all();
                         @endphp
                         @foreach ($categories as $categorie)
-                        <li data-id="{{ $categorie->id }}"><a>{{ $categorie->libelle }}</a></li>
+                        <li id="{{ $categorie->id }}">
+                            <a href="{{ route('categories.show', ['categorie_id' => $categorie->id]) }}">
+                                {{ $categorie->libelle }}
+                            </a>
+                        </li>
                         @endforeach
-                         <!-- <li><a href="{{route('emlpoi')}}">Emlpois</a></li>
-                        <li><a href="{{route('stage')}}">Stages</a></li> -->
                     </ul>
+
                 </li>
                 <li class="dropdown"> <a href="contact.html">Nos-services</a> </li>
                 <li class="dropdown"> <a href="{{route('contact')}}">Contact</a> </li>

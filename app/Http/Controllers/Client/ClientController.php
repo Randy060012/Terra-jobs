@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Categorie;
+use App\Models\Contrat;
 use App\Models\User;
+use COM;
 use Illuminate\Support\Facades\View;
 
 class ClientController extends Controller
@@ -18,10 +20,6 @@ class ClientController extends Controller
     public function index()
     {
         //
-        View::composer('client.layouts.header', function ($view) {
-            $view->with('categories', Categorie::all());
-            $view->with('users', User::all());
-        });
     }
 
     /**
@@ -43,6 +41,7 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -51,9 +50,12 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($categorie_id)
     {
         //
+        $datas = Contrat::all();
+        $categorie = Categorie::with('contrat')->where('id','=',$categorie_id)->first();
+        return view('client.pages.emploi', compact('categorie','datas'));
     }
 
     /**

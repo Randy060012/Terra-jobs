@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategorieController;
 use App\Http\Controllers\Admin\ContratController;
 use App\Http\Controllers\Admin\DomaineController;
 use App\Http\Controllers\Admin\TyeContratController;
+use App\Http\Controllers\Client\ClientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -83,3 +84,5 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('client.auth.register');
 })->name('register');
+
+Route::get('/client/opportunites/{categorie_id}', [ClientController::class, 'show'])->name('categories.show');
