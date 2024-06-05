@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategorieController extends Controller
 {
@@ -46,6 +47,9 @@ class CategorieController extends Controller
         $categorie = new Categorie();
         $categorie->libelle = $validatedData['libelle'];
         $categorie->description = $validatedData['description'];
+
+        // Génération du slug
+        $categorie->slug = Str::slug($categorie->libelle);
 
         if ($categorie->save()) {
             return back()->with('success', 'Categorie ajoutée avec succès');
@@ -97,6 +101,8 @@ class CategorieController extends Controller
         }
         $categorie->libelle = $validatedData['libelle'];
         $categorie->description = $validatedData['description'];
+        // Génération du slug
+        $categorie->slug = Str::slug($categorie->libelle);
 
         if ($categorie->save()) {
             return back()->with('success', 'Categorie modifiée avec succès');

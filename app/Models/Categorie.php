@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Categorie extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'libelle',
         'description',
+        'slug',
     ];
 
-    // public function contrat(): HasMany
-    // {
-    //     return $this->hasMany(Contrat::class);
-    // }
     public function contrat()
     {
         return $this->hasMany(Contrat::class);

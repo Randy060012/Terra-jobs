@@ -23,7 +23,8 @@ class CreateContratsTable extends Migration
             $table->string('image')->nullable();
             $table->string('fichier')->nullable();
             $table->string('date_limite')->nullable();
-            $table->integer('categorie_id')->nullable(); 
+            $table->string('slug'); 
+            $table->integer('categorie_id')->nullable();
             $table->timestamps();
         });
     }

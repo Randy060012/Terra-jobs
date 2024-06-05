@@ -18,7 +18,8 @@ class Contrat extends Model
         'image',
         'fichier',
         'date_limite',
-        'categorie_id'
+        'slug',
+        'categorie_id',
     ];
 
     public function domaine(): BelongsTo
@@ -31,7 +32,7 @@ class Contrat extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function typeContrat(): BelongsTo
+    public function typecontrat(): BelongsTo
     {
         return $this->belongsTo(TypeDeContrat::class);
     }

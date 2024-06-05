@@ -5,7 +5,7 @@
     <div class="container">
         <div class="page-caption">
             <h2>Job Detail</h2>
-            <p><a href="{{route('index')}}" title="Home">Accueil</a>  <i class="ti-angle-double-right"></i> Job Detail</p>
+            <p><a href="{{route('index')}}" title="Home">Accueil</a> <i class="ti-angle-double-right"></i> Job Detail</p>
         </div>
     </div>
 </div>
@@ -20,8 +20,8 @@
                 <div class="detail-wrapper">
                     <div class="detail-wrapper-body">
                         <div class="row">
-                            <div class="col-md-4 text-center user_profile_img"> <img src="{{asset('client/assets/img/company_logo_1.png')}}" class="width-100" alt="" />
-                                <h4 class="meg-0">Web Designer</h4>
+                            <div class="col-md-4 text-center user_profile_img"> <img src="{{asset($contrat->image)}}" class="width-100" alt="" />
+                                <h4 class="meg-0">{{$contrat->titre}}</h4>
                                 <span>512 Big Tower, New Delhi</span>
                                 <div class="text-center">
                                     <button type="button" data-toggle="modal" data-target="#signin" class="btn-job theme-btn job-apply">Apply Now</button>
@@ -53,11 +53,9 @@
                     </div>
                     <div class="detail-wrapper-body">
                         <ul class="detail-list">
-                            <li>Contrary to popular belief, Lorem Ipsum is not simply random text </li>
-                            <li>Latin professor at Hampden-Sydney College in Virginia </li>
-                            <li>looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage ideas </li>
-                            <li>The standard chunk of Lorem Ipsum used since the 1500s is reproduced </li>
-                            <li>accompanied by English versions from the 1914 translation by H. Rackham </li>
+                            <li><strong>Domaine:</strong> {{$contrat->domaine == null ? '' : $contrat->domaine->libelle}}</li>
+                            <li><strong>Catégorie:</strong> {{$contrat->categorie == null ? '' : $contrat->categorie->libelle}}</li>
+                            <li><strong>Type de contrat:</strong> {{$contrat->typecontrat == null ? '' : $contrat->typecontrat->libelle}} </li>
                         </ul>
                     </div>
                 </div>
@@ -66,7 +64,7 @@
                         <h4>Location</h4>
                     </div>
                     <div class="detail-wrapper-body">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.566512514854!2d76.8192921147794!3d30.702470481647698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fecca1d6c0001%3A0xe4953728a502a8e2!2sChandigarh!5e0!3m2!1sen!2sin!4v1520136168627" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.0515265723353!2d1.1760269!3d6.1829752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102158e2d5eaa3b5%3A0xf1f254a2a3898edd!2sFr%C3%A8res%20Franciscains%20d'Adidogom%C3%A9!5e0!3m2!1sen!2stt!4v1647999163292!5m2!1sen!2stt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
                 <div class="detail-wrapper">
@@ -94,17 +92,15 @@
                     <!-- Start: Job Overview -->
                     <div class="widget-boxed">
                         <div class="widget-boxed-header">
-                            <h4><i class="ti-location-pin padd-r-10"></i>Location</h4>
+                            <h4><i class="ti-location-pin padd-r-10"></i>Fiche d'information</h4>
                         </div>
                         <div class="widget-boxed-body">
                             <div class="side-list no-border">
                                 <ul>
-                                    <li><i class="ti-credit-card padd-r-10"></i>Package: 20K To 50K/Month</li>
-                                    <li><i class="ti-world padd-r-10"></i>https://www.example.com</li>
-                                    <li><i class="ti-mobile padd-r-10"></i>91 234 567 8765</li>
-                                    <li><i class="ti-email padd-r-10"></i>mail@example.com</li>
-                                    <li><i class="ti-pencil-alt padd-r-10"></i>Bachelor Degree</li>
-                                    <li><i class="ti-shield padd-r-10"></i>3 Year Exp.</li>
+                                    <li>
+                                        <i class="ti-credit-card padd-r-10"></i>
+                                        <a href="{{ asset($contrat->fichier) }}" target="_blank">{{ $contrat->fichier }}</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -112,7 +108,7 @@
                     <!-- End: Job Overview -->
 
                     <!-- Start: Opening hour -->
-                    <div class="widget-boxed">
+                    <!-- <div class="widget-boxed">
                         <div class="widget-boxed-header">
                             <h4><i class="ti-time padd-r-10"></i>Opening Hours</h4>
                         </div>
@@ -129,7 +125,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Start: Location -->
                     <div class="widget-boxed">
@@ -165,7 +161,7 @@
                         <h5><a href="employer-detail.html">Product Redesign</a></h5>
                         <p class="text-muted">2708 Scenic Way, IL 62373</p>
                     </div>
-                    <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                    <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                 </div>
             </div>
 
@@ -183,7 +179,7 @@
                         <h5><a href="employer-detail.html">New Product Mockup</a></h5>
                         <p class="text-muted">2708 Scenic Way, IL 62373</p>
                     </div>
-                    <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                    <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                 </div>
             </div>
 
@@ -201,7 +197,7 @@
                         <h5><a href="employer-detail.html">Custom Php Developer</a></h5>
                         <p class="text-muted">3765 C Street, Worcester</p>
                     </div>
-                    <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                    <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                 </div>
             </div>
 
@@ -219,7 +215,7 @@
                         <h5><a href="employer-detail.html">Wordpress Developer</a></h5>
                         <p class="text-muted">2719 Duff Avenue, Winooski</p>
                     </div>
-                    <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now </a> </div>
+                    <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now </a> </div>
                 </div>
             </div>
         </div>

@@ -42,7 +42,7 @@
                                                     <tr>
                                                         <th scope="row">{{ $loop->index +1 }}</th>
                                                         <td class="logo text-center">
-                                                            <img src="{{ asset($data->image) }}" class="rounded-circle img-rounded" width="40" height="40" alt="">
+                                                            <img src="{{asset($data->image)}}" class="rounded-circle img-rounded" width="40" height="40" alt="">
                                                         </td>
                                                         <td>{{$data->titre}}</td>
                                                         <td>{{$data->domaine == null ? '' : $data->domaine->libelle}}</td>

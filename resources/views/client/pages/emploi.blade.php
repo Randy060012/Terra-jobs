@@ -115,7 +115,7 @@
                             <p class="text-muted">{{$data->domaine == null ? '' : $data->domaine->libelle}}</p>
                         </div>
                         <div class="utf_apply_job_btn_item">
-                            <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a>
+                            <a href="{{route('contrat-detail', $data->slug)}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a>
                         </div>
                     </div>
                 </div>

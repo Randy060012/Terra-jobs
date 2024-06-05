@@ -54,8 +54,16 @@ class ClientController extends Controller
     {
         //
         $datas = Contrat::all();
-        $categorie = Categorie::with('contrat')->where('id','=',$categorie_id)->first();
-        return view('client.pages.emploi', compact('categorie','datas'));
+        $categorie = Categorie::with('contrat')->where('slug', '=', $categorie_id)->first();
+        return view('client.pages.emploi', compact('categorie', 'datas'));
+    }
+
+    public function showContrat($slug)
+    {
+        // Récupérer le contrat en utilisant le slug
+        $contrat = Contrat::where('slug', $slug)->firstOrFail();
+        // Retourner la vue avec le contrat
+        return view('client.pages.detail', ['contrat' => $contrat]);
     }
 
     /**

@@ -15,7 +15,7 @@
                         @endphp
                         @foreach ($categories as $categorie)
                         <li id="{{ $categorie->id }}">
-                            <a href="{{ route('categories.show', ['categorie_id' => $categorie->id]) }}">
+                            <a href="{{ route('categories.show', ['categorie_id' => $categorie->slug]) }}">
                                 {{ $categorie->libelle }}
                             </a>
                         </li>

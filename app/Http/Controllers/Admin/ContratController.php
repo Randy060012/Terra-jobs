@@ -11,6 +11,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class ContratController extends Controller
 {
@@ -83,6 +84,8 @@ class ContratController extends Controller
         $contrat->titre = $request->input('titre');
         $contrat->description = $request->input('description');
         $contrat->date_limite = $request->input('date_limite');
+        // Génération du slug
+        $contrat->slug = Str::slug($contrat->titre);
 
         // Gestion de l'image
         if ($request->hasFile('image')) {
@@ -155,6 +158,8 @@ class ContratController extends Controller
         $contrat->titre = $request->input('titre');
         $contrat->description = $request->input('description');
         $contrat->date_limite = $request->input('date_limite');
+        // Génération du slug
+        $contrat->slug = Str::slug($contrat->titre);
 
         // Gestion de l'image
         if ($request->hasFile('image')) {

@@ -69,9 +69,9 @@ Route::get('/opportunites/stages', function () {
     return view('client.pages.stage');
 })->name('stage');
 
-Route::get('/opportunites/detail', function () {
-    return view('client.pages.detail-job');
-})->name('detail-job');
+// Route::get('/opportunites/detail', function () {
+//     return view('client.pages.detail');
+// })->name('detail-job');
 
 Route::get('/contact', function () {
     return view('client.pages.contact');
@@ -86,3 +86,4 @@ Route::get('/register', function () {
 })->name('register');
 
 Route::get('/client/opportunites/{categorie_id}', [ClientController::class, 'show'])->name('categories.show');
+Route::get('/client/opportunites/detail/{slug}', [ClientController::class, 'showContrat'])->name('contrat-detail');

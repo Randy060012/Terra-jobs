@@ -79,7 +79,7 @@
                                 <h5><a href="employer-detail.html">Product Redesign</a></h5>
                                 <p class="text-muted">2708 Scenic Way, IL 62373</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -97,7 +97,7 @@
                                 <h5><a href="employer-detail.html">New Product Mockup</a></h5>
                                 <p class="text-muted">2708 Scenic Way, IL 62373</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -115,7 +115,7 @@
                                 <h5><a href="employer-detail.html">Custom Php Developer</a></h5>
                                 <p class="text-muted">3765 C Street, Worcester</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -133,7 +133,7 @@
                                 <h5><a href="employer-detail.html">Wordpress Developer</a></h5>
                                 <p class="text-muted">2719 Duff Avenue, Winooski</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -151,7 +151,7 @@
                                 <h5><a href="employer-detail.html">Web Maintenence</a></h5>
                                 <p class="text-muted">2708 Scenic Way, IL 62373</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -169,7 +169,7 @@
                                 <h5><a href="employer-detail.html">Photoshop Designer</a></h5>
                                 <p class="text-muted">2865 Emma Street, Lubbock</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -187,7 +187,7 @@
                                 <h5><a href="employer-detail.html">HTML5 & CSS3 Coder</a></h5>
                                 <p class="text-muted">2719 Burnside Avenue, Logan</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -205,7 +205,7 @@
                                 <h5><a href="employer-detail.html">.Net Developer</a></h5>
                                 <p class="text-muted">3815 Forest Drive, Alexandria</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
                 </div>
@@ -228,7 +228,7 @@
                                 <h5><a href="employer-detail.html">.Net Developer</a></h5>
                                 <p class="text-muted">2708 Scenic Way, IL 62373</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -246,7 +246,7 @@
                                 <h5><a href="employer-detail.html">Java Developer</a></h5>
                                 <p class="text-muted">2708 Scenic Way, IL 62373</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -264,7 +264,7 @@
                                 <h5><a href="employer-detail.html">Web Maintenence</a></h5>
                                 <p class="text-muted">3765 C Street, Worcester</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -282,7 +282,7 @@
                                 <h5><a href="employer-detail.html">Wordpress Developer</a></h5>
                                 <p class="text-muted">2719 Duff Avenue, Winooski</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -300,7 +300,7 @@
                                 <h5><a href="employer-detail.html">Custom Php Developer</a></h5>
                                 <p class="text-muted">2708 Scenic Way, IL 62373</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -318,7 +318,7 @@
                                 <h5><a href="employer-detail.html">New Product Mockup</a></h5>
                                 <p class="text-muted">2865 Emma Street, Lubbock</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -336,7 +336,7 @@
                                 <h5><a href="employer-detail.html">Product Redesign</a></h5>
                                 <p class="text-muted">2719 Burnside Avenue, Logan</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
 
@@ -354,7 +354,7 @@
                                 <h5><a href="employer-detail.html">Front End Designer</a></h5>
                                 <p class="text-muted">3815 Forest Drive, Alexandria</p>
                             </div>
-                            <div class="utf_apply_job_btn_item"> <a href="{{route('detail-job')}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                            <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
                         </div>
                     </div>
                 </div>
