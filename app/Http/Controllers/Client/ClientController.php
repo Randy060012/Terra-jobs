@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Categorie;
 use App\Models\Contrat;
+use App\Models\Domaine;
 use App\Models\User;
 use COM;
 use Illuminate\Support\Facades\View;
@@ -20,6 +21,17 @@ class ClientController extends Controller
     public function index()
     {
         //
+        $datas = Contrat::latest()->take(8)->get();
+        $categories = Categorie::take(4)->get();
+        $domaines = Domaine::all();
+        return view('client.pages.index', compact('datas', 'categories', 'domaines'));
+    }
+
+    public function categorie()
+    {
+        //
+        $datas = Categorie::all();
+        return view('client.pages.categorie', compact('datas'));
     }
 
     /**
@@ -50,21 +62,61 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($categorie_id)
+    // public function show($categorie_id)
+    // {
+    //     //
+    //     $datas = Contrat::all();
+    //     $categorie = Categorie::with('contrat')->where('slug', '=', $categorie_id)->first();
+    //     return view('client.pages.emploi', compact('categorie', 'datas'));
+    // }
+
+    public function contrat()
     {
         //
-        $datas = Contrat::all();
-        $categorie = Categorie::with('contrat')->where('slug', '=', $categorie_id)->first();
-        return view('client.pages.emploi', compact('categorie', 'datas'));
+        $datas = Contrat::orderBy('created_at', 'asc')->paginate(8);
+        return view('client.pages.contrat', compact('datas'));
     }
+
+
+    public function show($categorie_id)
+    {
+        $categorie = Categorie::where('slug', '=', $categorie_id)->first();
+        if ($categorie) {
+            $datas = $categorie->contrats()->paginate(8);
+        } else {
+            $datas = collect(); // Collection vide
+        }
+        $categories = Categorie::orderBy('created_at', 'asc')->get();
+        return view('client.pages.emploi', compact('categorie', 'datas', 'categories'));
+    }
+
+
+    // public function showContrat($slug)
+    // {
+    //     // Récupérer le contrat en utilisant le slug
+    //     $contrat = Contrat::where('slug', $slug)->firstOrFail();
+    //     // Retourner la vue avec le contrat
+    //     return view('client.pages.detail', ['contrat' => $contrat]);
+    // }
 
     public function showContrat($slug)
     {
         // Récupérer le contrat en utilisant le slug
         $contrat = Contrat::where('slug', $slug)->firstOrFail();
-        // Retourner la vue avec le contrat
-        return view('client.pages.detail', ['contrat' => $contrat]);
+
+        // Récupérer les contrats similaires avec le même domaine
+        $contratsSimilaires = Contrat::where('domaine_id', $contrat->domaine_id)
+            ->where('id', '!=', $contrat->id) // exclure le contrat actuel
+            ->take(4) // ou toute autre limite que vous préférez
+            ->get();
+
+        // Retourner la vue avec le contrat et les contrats similaires
+        return view('client.pages.detail', [
+            'contrat' => $contrat,
+            'datas' => $contratsSimilaires,
+        ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.

@@ -16,20 +16,21 @@
     <div class="container">
         <div class="log-box">
             <div class="tab-pane fade in show active" id="employer" role="tabpanel">
-                <form>
+                <form action="{{route('utilogin')}}" method="post">
+                    @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email Address">
+                        <input type="text" name="email" class="form-control" placeholder="Email Address">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" name="mdp" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group"> <span class="custom-checkbox">
                             <input type="checkbox" id="4">
-                            <label for="4"></label>
-                            Remember Me </span> <a href="#" title="Forget" class="fl-right">Forgot Password?</a>
+                            <label for="4"></label> Remenber me </span> <a href="#" title="Forget" class="fl-right">Forgot password</a>
                     </div>
                     <div class="form-group text-center">
-                        <button type="button" class="btn theme-btn full-width btn-m">LogIn</button>
+                        <button type="submit" class="btn theme-btn full-width btn-m">LogIn</button>
+                        <a href="{{ route('index-register') }}" class="btn theme-btn full-width btn-m">Register</a>
                     </div>
                 </form>
                 <div class="log-option"><span>OR</span></div>

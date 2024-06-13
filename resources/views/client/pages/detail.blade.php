@@ -1,15 +1,16 @@
 @extends('client.master')
 @section('content')
-<!-- ======================= Page Title ===================== -->
+<!-- ======================= Titre de la Page ===================== -->
 <div class="page-title">
     <div class="container">
         <div class="page-caption">
-            <h2>Job Detail</h2>
-            <p><a href="{{route('index')}}" title="Home">Accueil</a> <i class="ti-angle-double-right"></i> Job Detail</p>
+            <h2>Détail du Travail</h2>
+            <p><a href="{{route('index')}}" title="Accueil">Accueil</a> <i class="ti-angle-double-right"></i> Détail du Travail</p>
         </div>
     </div>
 </div>
-<!-- ======================= End Page Title ===================== -->
+<!-- ======================= Fin du Titre de la Page ===================== -->
+
 
 <!-- ====================== Start Job Detail 2 ================ -->
 <section class="padd-top-80 padd-bot-60">
@@ -43,8 +44,8 @@
                         <h4>Job Description</h4>
                     </div>
                     <div class="detail-wrapper-body">
-                        <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+                        <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled a</p>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate </p>
                     </div>
                 </div>
                 <div class="detail-wrapper">
@@ -76,11 +77,6 @@
                             <li>There are many variations of passages of Lorem Ipsum available</li>
                             <li>the majority have suffered alteration in some form slightly</li>
                             <li>you need to be sure there isn't anything embarrassing hidden</li>
-                            <li>generators on the Internet tend to repeat predefined chunks as necessary</li>
-                            <li>making this the first true generator on the Internet It uses a dictionary</li>
-                            <li>Ability to solve problems creatively and effectively</li>
-                            <li>combined with a handful of model sentence structures</li>
-                            <li>standard chunk of Lorem Ipsum used since the 1500s is reproduced</li>
                         </ul>
                     </div>
                 </div>
@@ -105,29 +101,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- End: Job Overview -->
-
-                    <!-- Start: Opening hour -->
-                    <!-- <div class="widget-boxed">
-                        <div class="widget-boxed-header">
-                            <h4><i class="ti-time padd-r-10"></i>Opening Hours</h4>
-                        </div>
-                        <div class="widget-boxed-body">
-                            <div class="side-list">
-                                <ul>
-                                    <li>Monday <span>9 AM - 5 PM</span></li>
-                                    <li>Tuesday <span>9 AM - 5 PM</span></li>
-                                    <li>Wednesday <span>9 AM - 5 PM</span></li>
-                                    <li>Thursday <span>9 AM - 5 PM</span></li>
-                                    <li>Friday <span>9 AM - 5 PM</span></li>
-                                    <li>Saturday <span>9 AM - 3 PM</span></li>
-                                    <li>Sunday <span>Closed</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- Start: Location -->
                     <div class="widget-boxed">
                         <div class="widget-boxed-header">
                             <h4><i class="ti-time padd-r-10"></i>Location</h4>
@@ -147,9 +120,10 @@
             </div>
         </div>
         <div class="row">
-            <!-- Single Job -->
+            @foreach ($datas as $data)
             <div class="col-md-3 col-sm-6">
-                <div class="utf_grid_job_widget_area"> <span class="job-type full-type">Full Time</span>
+                <div class="utf_grid_job_widget_area">
+                    <span class="job-type full-type">Temps Plein</span>
                     <div class="utf_job_like">
                         <label class="toggler toggler-danger">
                             <input type="checkbox" checked>
@@ -157,67 +131,20 @@
                         </label>
                     </div>
                     <div class="u-content">
-                        <div class="avatar box-80"> <a href="employer-detail.html"> <img class="img-responsive" src="{{asset('client/assets/img/company_logo_1.png')}}" alt=""> </a> </div>
-                        <h5><a href="employer-detail.html">Product Redesign</a></h5>
-                        <p class="text-muted">2708 Scenic Way, IL 62373</p>
+                        <div class="avatar box-80">
+                            <a href="{{route('contrat-detail', $data->slug)}}">
+                                <img class="img-responsive" src="{{ asset($data->image) }}" alt="">
+                            </a>
+                        </div>
+                        <h5><a href="{{route('contrat-detail', $data->slug)}}">{{$data->titre}}</a></h5>
+                        <p class="text-muted">{{$data->domaine == null ? '' : $data->domaine->libelle}}</p>
                     </div>
-                    <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
+                    <div class="utf_apply_job_btn_item">
+                        <a href="{{route('contrat-detail', $data->slug)}}" class="btn job-browse-btn btn-radius br-light">Voir plus</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Single Job -->
-            <div class="col-md-3 col-sm-6">
-                <div class="utf_grid_job_widget_area"> <span class="job-type full-type">Full Time</span>
-                    <div class="utf_job_like">
-                        <label class="toggler toggler-danger">
-                            <input type="checkbox">
-                            <i class="fa fa-heart"></i>
-                        </label>
-                    </div>
-                    <div class="u-content">
-                        <div class="avatar box-80"> <a href="employer-detail.html"> <img class="img-responsive" src="{{asset('client/assets/img/company_logo_2.png')}}" alt=""> </a> </div>
-                        <h5><a href="employer-detail.html">New Product Mockup</a></h5>
-                        <p class="text-muted">2708 Scenic Way, IL 62373</p>
-                    </div>
-                    <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
-                </div>
-            </div>
-
-            <!-- Single Job -->
-            <div class="col-md-3 col-sm-6">
-                <div class="utf_grid_job_widget_area"> <span class="job-type part-type">Full Time</span>
-                    <div class="utf_job_like">
-                        <label class="toggler toggler-danger">
-                            <input type="checkbox" checked>
-                            <i class="fa fa-heart"></i>
-                        </label>
-                    </div>
-                    <div class="u-content">
-                        <div class="avatar box-80"> <a href="employer-detail.html"> <img class="img-responsive" src="{{asset('client/assets/img/company_logo_3.png')}}" alt=""> </a> </div>
-                        <h5><a href="employer-detail.html">Custom Php Developer</a></h5>
-                        <p class="text-muted">3765 C Street, Worcester</p>
-                    </div>
-                    <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now</a> </div>
-                </div>
-            </div>
-
-            <!-- Single Job -->
-            <div class="col-md-3 col-sm-6">
-                <div class="utf_grid_job_widget_area"> <span class="job-type part-type">Part Time</span>
-                    <div class="utf_job_like">
-                        <label class="toggler toggler-danger">
-                            <input type="checkbox">
-                            <i class="fa fa-heart"></i>
-                        </label>
-                    </div>
-                    <div class="u-content">
-                        <div class="avatar box-80"> <a href="employer-detail.html"> <img class="img-responsive" src="{{asset('client/assets/img/company_logo_4.png')}}" alt=""> </a> </div>
-                        <h5><a href="employer-detail.html">Wordpress Developer</a></h5>
-                        <p class="text-muted">2719 Duff Avenue, Winooski</p>
-                    </div>
-                    <div class="utf_apply_job_btn_item"> <a href="#" class="btn job-browse-btn btn-radius br-light">Apply Now </a> </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -228,8 +155,8 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading light">
-                    <h2>Subscribe Our Newsletter!</h2>
-                    <p>Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
+                    <h2>Abonnez-vous à Notre Newsletter !</h2>
+                    <p>Lorem Ipsum est simplement un texte fictif de l'industrie de l'impression et de la composition typographique. Lorem Ipsum est le texte fictif standard de l'industrie depuis le 1500.</p>
                 </div>
             </div>
         </div>
@@ -237,9 +164,9 @@
             <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
                 <div class="newsletter-box text-center">
                     <div class="input-group"> <span class="input-group-addon"><span class="ti-email theme-cl"></span></span>
-                        <input type="text" class="form-control" placeholder="Enter your Email...">
+                        <input type="text" class="form-control" placeholder="Entrez votre E-mail...">
                     </div>
-                    <button type="button" class="btn theme-btn btn-radius btn-m">Subscribe</button>
+                    <button type="button" class="btn theme-btn btn-radius btn-m">S'abonner</button>
                 </div>
             </div>
         </div>

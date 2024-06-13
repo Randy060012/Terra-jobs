@@ -23,12 +23,13 @@
                     </ul>
 
                 </li>
-                <li class="dropdown"> <a href="contact.html">Nos-services</a> </li>
+                <li class="dropdown"> <a href="#">Nos-services</a> </li>
                 <li class="dropdown"> <a href="{{route('contact')}}">Contact</a> </li>
+                <!-- <li class="dropdown"> <a href="{{route('utilisateur')}}">Utilisateur</a> </li> -->
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="sign-up"><a class="btn-signup red-btn" href="{{route('login')}}"><span class="ti-briefcase"></span>login</a></li>
-                <li class="sign-up"><a class="btn-signup red-btn" href="{{route('register')}}"><span class="ti-briefcase"></span>Register</a></li>
+                <li class="sign-up"><a class="btn-signup red-btn" href="{{route('index-login')}}"><span class="ti-briefcase"></span>login</a></li>
+                <!-- <li class="sign-up"><a class="btn-signup red-btn" href="{{route('register')}}"><span class="ti-briefcase"></span>Register</a></li> -->
             </ul>
         </div>
     </div>

@@ -4,89 +4,75 @@
 <div class="page-title">
     <div class="container">
         <div class="page-caption text-center">
-            <h2>Job In Grid</h2>
-            <p><a href="{{route('index')}}" title="Home">Accueil</a> <i class="ti-angle-double-right"></i> Job Layout One</p>
+            <h2>Emploi en Grille</h2>
+            <p><a href="{{route('index')}}" title="Accueil">Accueil</a> <i class="ti-angle-double-right"></i> Mise en Page d'Emploi Un</p>
         </div>
     </div>
 </div>
 <!-- ======================= End Page Title ===================== -->
 
-<!-- ======================= Search Filter ===================== -->
+<!-- ======================= Filtre de Recherche ===================== -->
 <section class="padd-0 padd-top-20 jov_search_block_inner">
     <div class="row">
         <div class="container">
             <form>
                 <fieldset class="search-form">
                     <div class="col-md-4 col-sm-4">
-                        <input type="text" class="form-control" placeholder="Job Title, Keywords or Company Name..." />
+                        <input type="text" class="form-control" placeholder="Titre de l'Emploi, Mots-Clés ou Nom de l'Entreprise..." />
                     </div>
                     <div class="col-md-3 col-sm-3">
                         <select class="wide form-control">
-                            <option data-display="Location">All Country</option>
+                            <option data-display="Lieu">Tous les Pays</option>
                             <option value="1">Afghanistan</option>
-                            <option value="2">Albania</option>
-                            <option value="3">Algeria</option>
-                            <option value="4">Brazil</option>
-                            <option value="5">Burundi</option>
-                            <option value="6">Bulgaria</option>
-                            <option value="7">Germany</option>
-                            <option value="8">Grenada</option>
-                            <option value="9">Guatemala</option>
-                            <option value="10" disabled>Iceland</option>
+                            <option value="2">Albanie</option>
+                            <option value="3">Algérie</option>
+                            <!-- Ajoutez d'autres options pour les pays ici -->
                         </select>
                     </div>
                     <div class="col-md-3 col-sm-3">
                         <select class="wide form-control">
-                            <option data-display="Category">Show All</option>
-                            <option value="1">Software Developer</option>
-                            <option value="2">Java Developer</option>
-                            <option value="3">Software Engineer</option>
-                            <option value="4">Web Developer</option>
-                            <option value="5">PHP Developer</option>
-                            <option value="6">Python Developer</option>
-                            <option value="7">Front end Developer</option>
-                            <option value="8">Associate Developer</option>
-                            <option value="9">Back end Developer</option>
-                            <option value="10">XML Developer</option>
-                            <option value="11">.NET Developer</option>
-                            <option value="12" disabled>Marketting Developer</option>
+                            <option data-display="Catégorie">Afficher Tout</option>
+                            <option value="1">Développeur Logiciel</option>
+                            <option value="2">Développeur Java</option>
+                            <option value="3">Ingénieur Logiciel</option>
+                            <!-- Ajoutez d'autres options pour les catégories ici -->
                         </select>
                     </div>
                     <div class="col-md-2 col-sm-2 m-clear">
-                        <button type="submit" class="btn theme-btn full-width height-50 radius-0">Search</button>
+                        <button type="submit" class="btn theme-btn full-width height-50 radius-0">Rechercher</button>
                     </div>
                 </fieldset>
             </form>
         </div>
     </div>
 </section>
-<!-- ======================= Search Filter ===================== -->
+<!-- ======================= Filtre de Recherche ===================== -->
 
-<!-- ====================== Start Job Detail 2 ================ -->
+<!-- ====================== Début Détail de l'Emploi 2 ================ -->
 <section class="padd-top-20 padd-bot-80">
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-sm-4 col-xs-12">
-                <h4 class="job_vacancie">98 Jobs & Vacancies</h4>
+                <h4 class="job_vacancie">{{ $datas->total() }} Emplois & Vacances</h4>
             </div>
             <div class="col-md-7 col-sm-8 col-xs-12">
                 <div class="fl-right short_by_filter_list">
                     <div class="search-wide short_by_til">
-                        <h5>Short By</h5>
+                        <h5>Trier Par</h5>
                     </div>
                     <div class="search-wide full">
                         <select class="wide form-control">
-                            <option value="1">Most Recent</option>
-                            <option value="2">Most Viewed</option>
-                            <option value="4">Most Search</option>
+                            <option value="1">Le Plus Récent</option>
+                            <option value="2">Le Plus Vu</option>
+                            <option value="4">Le Plus Recherché</option>
                         </select>
                     </div>
                     <div class="search-wide full">
                         <select class="wide form-control">
-                            <option>10 Per Page</option>
-                            <option value="1">20 Per Page</option>
-                            <option value="2">30 Per Page</option>
-                            <option value="4">50 Per Page</option>
+                            <option>10 Par Page</option>
+                            <option value="1">20 Par Page</option>
+                            <option value="2">30 Par Page</option>
+                            <option value="4">50 Par Page</option>
                         </select>
                     </div>
                 </div>
@@ -95,10 +81,10 @@
 
         <div class="container">
             <div class="row">
-                @foreach ($categorie->contrat as $data)
+                @foreach ($datas as $data)
                 <div class="col-md-3 col-sm-6">
                     <div class="utf_grid_job_widget_area">
-                        <span class="job-type full-type">Full Time</span>
+                        <span class="job-type full-type">Temps Plein</span>
                         <div class="utf_job_like">
                             <label class="toggler toggler-danger">
                                 <input type="checkbox" checked>
@@ -107,15 +93,15 @@
                         </div>
                         <div class="u-content">
                             <div class="avatar box-80">
-                                <a href="#">
+                                <a href="{{route('contrat-detail', $data->slug)}}">
                                     <img class="img-responsive" src="{{ asset($data->image) }}" alt="">
                                 </a>
                             </div>
-                            <h5><a href="#">{{$data->titre}}</a></h5>
+                            <h5><a href="{{route('contrat-detail', $data->slug)}}">{{$data->titre}}</a></h5>
                             <p class="text-muted">{{$data->domaine == null ? '' : $data->domaine->libelle}}</p>
                         </div>
                         <div class="utf_apply_job_btn_item">
-                            <a href="{{route('contrat-detail', $data->slug)}}" class="btn job-browse-btn btn-radius br-light">Apply Now</a>
+                            <a href="{{route('contrat-detail', $data->slug)}}" class="btn job-browse-btn btn-radius br-light">Voir plus</a>
                         </div>
                     </div>
                 </div>
@@ -125,25 +111,21 @@
 
         <div class="clearfix"></div>
         <div class="utf_flexbox_area padd-0">
-            <ul class="pagination">
-                <li class="page-item"> <a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">«</span> <span class="sr-only">Previous</span> </a> </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"> <a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true">»</span> <span class="sr-only">Next</span> </a> </li>
-            </ul>
+            {{ $datas->links() }}
         </div>
     </div>
 </section>
-<!-- ====================== End Job Detail 2 ================ -->
+
+
+<!-- ====================== Fin Détail de l'Emploi 2 ================ -->
 
 <section class="newsletter theme-bg" style="background-image:url('client/assets/img/bg-new.png')">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading light">
-                    <h2>Subscribe Our Newsletter!</h2>
-                    <p>Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
+                    <h2>Abonnez-vous à Notre Newsletter !</h2>
+                    <p>Lorem Ipsum est simplement un texte fictif de l'industrie de l'impression et de la composition typographique. Lorem Ipsum est le texte fictif standard de l'industrie depuis le 1500.</p>
                 </div>
             </div>
         </div>
@@ -151,9 +133,9 @@
             <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
                 <div class="newsletter-box text-center">
                     <div class="input-group"> <span class="input-group-addon"><span class="ti-email theme-cl"></span></span>
-                        <input type="text" class="form-control" placeholder="Enter your Email...">
+                        <input type="text" class="form-control" placeholder="Entrez votre E-mail...">
                     </div>
-                    <button type="button" class="btn theme-btn btn-radius btn-m">Subscribe</button>
+                    <button type="button" class="btn theme-btn btn-radius btn-m">S'abonner</button>
                 </div>
             </div>
         </div>

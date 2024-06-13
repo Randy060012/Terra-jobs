@@ -17,7 +17,7 @@ class Categorie extends Model
         'slug',
     ];
 
-    public function contrat()
+    public function contrats()
     {
         return $this->hasMany(Contrat::class);
     }

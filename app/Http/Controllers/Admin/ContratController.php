@@ -31,6 +31,11 @@ class ContratController extends Controller
         return view('admin.pages.contrat.index', compact('datas', 'categories', 'domaines', 'types', 'users'));
     }
 
+    public function getContratJson(){
+        $data = Contrat::with('categorie' , 'serie' , 'domaine')->get();
+        return response()->json($data, 200);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -204,4 +209,5 @@ class ContratController extends Controller
             return back()->with('danger', 'Problème lors de la suppression d\'un contrat');
         }
     }
+
 }

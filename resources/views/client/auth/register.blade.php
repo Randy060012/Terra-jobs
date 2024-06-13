@@ -5,7 +5,7 @@
     <div class="container">
         <div class="page-caption">
             <h2>Create an Account</h2>
-            <p><a href="{{route('index')}}" title="Home">Accueil</a>  <i class="ti-angle-double-right"></i> SignUp</p>
+            <p><a href="{{route('index')}}" title="Home">Accueil</a> <i class="ti-angle-double-right"></i> SignUp</p>
         </div>
     </div>
 </div>
@@ -15,44 +15,46 @@
 <section class="padd-top-80 padd-bot-80">
     <div class="container">
         <div class="log-box">
-            <form class="log-form">
+            <form class="log-form" method="post" action="{{ route('register') }}">
+                @csrf
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Name">
+                        <label>Nom</label>
+                        <input type="text" name="nom" class="form-control" placeholder="Nom" required>
                     </div>
                 </div>
                 <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Prenom</label>
+                        <input type="text" name="prenom" class="form-control" placeholder="Prenom" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Mot de passe</label>
+                        <input type="password" name="mdp" class="form-control" placeholder="********" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Confirme</label>
+                        <input type="password" name="re_password" class="form-control" placeholder="********" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" placeholder="********">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>Confirm Password</label>
-                        <input type="password" class="form-control" placeholder="********">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>Phone</label>
-                        <input type="text" class="form-control" placeholder="Phone Number">
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group text-center mrg-top-15">
-                        <button type="submit" class="btn theme-btn btn-m full-width">Sign Up</button>
+                        <button type="submit" class="btn theme-btn btn-m full-width">Soumettre</button>
                     </div>
                 </div>
                 <div class="clearfix"></div>
             </form>
+
         </div>
     </div>
 </section>
@@ -81,3 +83,27 @@
     </div>
 </section>
 @endsection
+@push('script')
+@if(Session::has('success'))
+<script>
+    toastr.success("{{Session::get('success')}}", {
+        positionClass: "toast-top-right",
+        closeButton: true,
+        progressBar: true,
+        timeOut: 5000,
+        extendedTimeOut: 2000,
+    });
+</script>
+@endif
+@if(Session::has('error'))
+<script>
+    toastr.error("{{Session::get('error')}}", {
+        positionClass: "toast-top-right",
+        closeButton: true,
+        progressBar: true,
+        timeOut: 5000,
+        extendedTimeOut: 2000,
+    });
+</script>
+@endif
+@endpush
