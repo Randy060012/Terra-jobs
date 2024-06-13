@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i class="fa fa-bars"></i> </button>
-            <a class="navbar-brand" href="{{route('index')}}"> <img src="client/assets/img/logo-light.png" class="logo logo-display" alt=""> <img src="client/assets/img/logo.png" class="logo logo-scrolled" alt=""> </a>
+            <a class="navbar-brand" href="{{route('index')}}"> <img src="{{asset('client/assets/img/logo-light.png')}}" class="logo logo-display" alt=""> <img src="client/assets/img/logo.png" class="logo logo-scrolled" alt=""> </a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
@@ -29,7 +29,6 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="sign-up"><a class="btn-signup red-btn" href="{{route('index-login')}}"><span class="ti-briefcase"></span>login</a></li>
-                <!-- <li class="sign-up"><a class="btn-signup red-btn" href="{{route('register')}}"><span class="ti-briefcase"></span>Register</a></li> -->
             </ul>
         </div>
     </div>
