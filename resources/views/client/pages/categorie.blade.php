@@ -5,7 +5,7 @@
     <div class="container">
         <div class="page-caption">
             <h2>Browse by Categories</h2>
-            <p><a href="#" title="Home">Home</a> <i class="ti-angle-double-right"></i> Browse by Categories</p>
+            <p><a href="{{route('index')}}" title="Home">Home</a> <i class="ti-angle-double-right"></i> Browse by Categories</p>
         </div>
     </div>
 </div>

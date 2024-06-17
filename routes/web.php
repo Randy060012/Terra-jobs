@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\ContratController;
 use App\Http\Controllers\Admin\DomaineController;
 use App\Http\Controllers\Admin\TyeContratController;
 use App\Http\Controllers\Client\ClientController;
+use App\Http\Controllers\Client\EducationController;
+use App\Http\Controllers\Client\ExperienceController;
 use App\Http\Controllers\Client\UtilisateurController;
 use Illuminate\Support\Facades\Route;
 
@@ -98,9 +100,19 @@ Route::post('/textRg', [UtilisateurController::class, 'textRegister'])->name('re
 Route::get('/utilisateur/register', [UtilisateurController::class, 'register'])->name("index-register");
 Route::get('/Utilisateur/login', [UtilisateurController::class, 'login'])->name("index-login");
 Route::post('/textLg', [UtilisateurController::class, 'textLogin'])->name('utilogin');
-Route::get('/textLogout',[UtilisateurController::class,'logout'])->name("utilogout");
+Route::get('/textLogout', [UtilisateurController::class, 'logout'])->name("utilogout");
 Route::group(['middleware' => ['UtiAuthCheck']], function () {
-    Route::get('/utilisateur', function () {
-        return view('client.pages.utilisateur');
-    })->name('utilisateur');
+    Route::get('/utilisateur/dashboard', [UtilisateurController::class, 'index'])->name("index-dash");
+    Route::get('/utilisateur/edite/{id}', [UtilisateurController::class, 'edit'])->name("edit-uti");
+    Route::put('/utilisateur/edition/{id}', [UtilisateurController::class, 'update'])->name('update-uti');
+    //Education
+    Route::get('/utilisateur/education', [EducationController::class, 'index'])->name("index-edu");
+    Route::post('/utilisateur/education/ajout', [EducationController::class, 'store'])->name('add-edu');
+    Route::put('/utilisateur/education/modification', [EducationController::class, 'update'])->name('update-edu');
+    Route::delete('/utilisateur/education/supression/{id}', [EducationController::class, 'destroy'])->name('delete-edu');
+   //Experience
+   Route::get('/utilisateur/experience', [ExperienceController::class, 'index'])->name("index-exp");
+   Route::post('/utilisateur/experience/ajout', [ExperienceController::class, 'store'])->name('add-exp');
+   Route::put('/utilisateur/experience/modification', [ExperienceController::class, 'update'])->name('update-exp');
+   Route::delete('/utilisateur/experience/supression/{id}', [ExperienceController::class, 'destroy'])->name('delete-exp');
 });

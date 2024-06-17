@@ -10,11 +10,11 @@ class Utilisateur extends Model
     use HasFactory;
     protected $fillable = [
         'email',
-        'mdp', 
+        'mdp',
         'nom',
         'prenom',
         'telephone',
-        'image',
+        'image', 
         'cv',
         'adresse',
         'niveau',

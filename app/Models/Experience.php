@@ -12,7 +12,7 @@ class Experience extends Model
     protected $fillable = [
         'nom',
         'annee',
-        'poste',
+        'poste', 
         'description',
         'utilisateur_id',
     ];

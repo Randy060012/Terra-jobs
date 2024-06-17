@@ -26,6 +26,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="utf_skin_area">
@@ -112,6 +113,7 @@
     <div><a href="#" class="scrollup">Scroll</a></div>
 
     <!-- Jquery js-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{asset('client/assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('client/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('client/assets/plugins/bootstrap/js/bootsnav.js')}}"></script>
@@ -128,6 +130,57 @@
         });
         AOS.init();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @yield('scripts')
+    @stack('script')
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .table-actions {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .action-btn {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .add {
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+
+        .edit {
+            background-color: #ffc107;
+            color: white;
+            border: none;
+        }
+
+        .delete {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+    </style>
 </body>
 
 <!-- Mirrored from utouchdesign.com/themes/envato/escort/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2024 21:16:12 GMT -->

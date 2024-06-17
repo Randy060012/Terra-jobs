@@ -97,7 +97,7 @@ class DomaineController extends Controller
         }
         $domaine->libelle = $validatedData['libelle'];
         $domaine->description = $validatedData['description'];
-
+ 
         if ($domaine->save()) {
             return back()->with('success', 'Domaine modifiée avec succès');
         } else {

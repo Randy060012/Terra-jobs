@@ -13,7 +13,7 @@ class Education extends Model
         'universite',
         'annee',
         'description',
-        'utilisateur_id',
+        'utilisateur_id', 
     ];
 
     public function utilisateur(): BelongsTo

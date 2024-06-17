@@ -18,7 +18,7 @@ class UtilisateurController extends Controller
     public function index()
     {
         //
-        // return view('client.pages.utilisateur');
+        return view('client.pages.dashboard');
     }
 
     public function register()
@@ -74,6 +74,8 @@ class UtilisateurController extends Controller
     public function edit($id)
     {
         //
+        $data = Utilisateur::find($id);
+        return view('client.pages.utilisateur', compact('data'));
     }
 
     /**
@@ -83,10 +85,97 @@ class UtilisateurController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // public function update(Request $request, $id)
+    // {
+    //     //
+    //     // dd($request);
+    //     $utilisateur = Utilisateur::find($id);
+    //     $utilisateur->email = $request->input('email');
+    //     $utilisateur->mdp = $request->input('mdp');
+    //     $utilisateur->nom = $request->input('nom');
+    //     $utilisateur->prenom = $request->input('prenom');
+    //     $utilisateur->telephone = $request->input('telephone');
+    //     $utilisateur->image = $request->input('image');
+    //     $utilisateur->adresse = $request->input('adresse');
+    //     $utilisateur->niveau = $request->input('niveau');
+    //     $utilisateur->specialite = $request->input('specialite');
+
+    //     // Gestion du Cv
+    //     if ($request->hasFile('file')) {
+    //         $file = $request->file('file');
+    //         $filePath = '/utiliCv/' . "file_" . time() . '_' . $file->getClientOriginalName();
+    //         $file->move(public_path('utiliCv'), $filePath);
+    //         $utilisateur->cv = $filePath;
+    //     }
+
+    //     // Enregistrement d'un utilisateur
+    //     if ($utilisateur->save()) {
+    //         return back()->with('success', 'Utilisateur modifié avec succès.');
+    //     } else {
+    //         return back()->with('danger', 'Problème lors de la modification du contrat.');
+    //     }
+    // }
+
     public function update(Request $request, $id)
     {
-        //
+        // Validation des données
+        $request->validate([
+            'email' => 'required|email|unique:utilisateurs,email,' . $id,
+            'mdp' => 'nullable|min:4',
+            'nom' => 'required|string|max:50',
+            'prenom' => 'required|string|max:50',
+            'telephone' => 'nullable|string|max:20',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'adresse' => 'nullable|string',
+            'niveau' => 'nullable|string|max:50',
+            'specialite' => 'nullable|string|max:50',
+            'file' => 'nullable|file|mimes:pdf,doc,docx|max:2048'
+        ]);
+
+        $utilisateur = Utilisateur::find($id);
+
+        if (!$utilisateur) {
+            return back()->with('danger', 'Utilisateur non trouvé.');
+        }
+
+        $utilisateur->email = $request->input('email');
+
+        if ($request->filled('mdp')) {
+            $utilisateur->mdp = Hash::make($request->input('mdp'));
+        }
+
+        $utilisateur->nom = $request->input('nom');
+        $utilisateur->prenom = $request->input('prenom');
+        $utilisateur->telephone = $request->input('telephone');
+        $utilisateur->adresse = $request->input('adresse');
+        $utilisateur->niveau = $request->input('niveau');
+        $utilisateur->specialite = $request->input('specialite');
+
+        // Gestion de l'image de profil
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagePath = 'utili/image_' . time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('utili'), $imagePath);
+            $utilisateur->image = $imagePath;
+        }
+
+        // Gestion du CV
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $filePath = 'utili/file_' . time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('utili'), $filePath);
+            $utilisateur->cv = $filePath;
+        }
+
+        // Enregistrement de l'utilisateur
+        if ($utilisateur->save()) {
+            return back()->with('success', 'Utilisateur modifié avec succès.');
+        } else {
+            return back()->with('danger', 'Problème lors de la modification de l\'utilisateur.');
+        }
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -126,7 +215,7 @@ class UtilisateurController extends Controller
         $utilisateur->email = $request->email;
         $utilisateur->mdp = Hash::make($request->mdp);
         if ($utilisateur->save()) {
-            return redirect()->route('login')->with('success', 'Compte créé avec succès');
+            return redirect()->route('index-login')->with('success', 'Compte créé avec succès');
         } else {
             return redirect()->back()->with('fail', 'Une erreur est survenue lors de la création du compte');
         }
@@ -144,7 +233,7 @@ class UtilisateurController extends Controller
             if (Hash::check($request->mdp, $utilisateur->mdp)) {
                 $request->session()->put('utilisateurId', $utilisateur->id);
                 $request->session()->put('utilisateurNom', $utilisateur->nom . ' ' . $utilisateur->prenom);
-                return redirect('/utilisateur');
+                return redirect('/utilisateur/dashboard');
             } else {
                 return back()->with('fail', 'Utilisateur introuvable');
             }
