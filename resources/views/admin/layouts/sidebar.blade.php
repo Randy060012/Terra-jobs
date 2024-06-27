@@ -14,7 +14,7 @@
                     <span class="nav-text">Contrat</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('index-contrat')}}">Listes</a></li>
+                    <li><a href="{{route('list-contrat')}}">Listes</a></li>
                     <li><a href="{{route('ajout-contrat')}}">Nouveau</a></li>
                 </ul>
             </li>

@@ -180,6 +180,19 @@
             color: white;
             border: none;
         }
+
+        .detail-wrapper-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-info {
+            background: #f9f9f9;
+            /* ou toute autre couleur de fond souhaitée */
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </body>
 

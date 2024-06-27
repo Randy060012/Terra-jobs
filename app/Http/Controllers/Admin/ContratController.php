@@ -60,46 +60,56 @@ class ContratController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
+        // Récupérer l'ID de l'utilisateur connecté à partir de la session
+        $userId = session()->get('userId');
+        // dd($userId); // Vérifiez si l'ID de l'utilisateur est correctement récupéré
+
+        // Définir les messages de validation personnalisés
         $messages = [
-            "user_id.required" => "L'utilisateur est requis.",
             'domaine_id.required' => "Le domaine est requis.",
             'type_de_contrat_id.required' => "Le type de contrat est requis.",
             'categorie_id.required' => "La catégorie est requise.",
+            'titre.required' => "Le titre est requis.",
+            'description.required' => "La description est requise.",
+            'date_limite.required' => "La date limite est requise.",
         ];
 
-        // Validation des données
+        // Valider les données de la requête
         $validator = Validator::make($request->all(), [
-            'user_id' => 'required',
             'domaine_id' => 'required',
             'type_de_contrat_id' => 'required',
             'categorie_id' => 'required',
+            'titre' => 'required|string|max:255',
+            'description' => 'required|string',
+            'date_limite' => 'required|date',
         ], $messages);
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
 
-        // Création d'une nouvelle instance de Contrat
+        // Créer une nouvelle instance de Contrat
         $contrat = new Contrat();
-        $contrat->user_id = $request->input('user_id');
+        $contrat->user_id = $userId;  // Utiliser l'ID de l'utilisateur connecté
         $contrat->domaine_id = $request->input('domaine_id');
         $contrat->type_de_contrat_id = $request->input('type_de_contrat_id');
         $contrat->categorie_id = $request->input('categorie_id');
         $contrat->titre = $request->input('titre');
         $contrat->description = $request->input('description');
         $contrat->date_limite = $request->input('date_limite');
-        // Génération du slug
+
+        // Générer le slug
         $contrat->slug = Str::slug($contrat->titre);
 
-        // Gestion de l'image
+        // Gérer l'upload de l'image
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $imagePath = '/produitImage/' . "images" . time() . '_' . $image->getClientOriginalName();
+            $imagePath = 'produitImage/' . time() . '_' . $image->getClientOriginalName();
             $image->move(public_path('produitImage'), $imagePath);
             $contrat->image = $imagePath;
         }
 
+        // Gérer l'upload du fichier
         if ($request->hasFile('fichier')) {
             $file_image = $request->file('fichier');
             $file_name_image = "file" . time() . '_' . $file_image->getClientOriginalName();
@@ -107,13 +117,14 @@ class ContratController extends Controller
             $contrat->fichier = $file_name_image;
         }
 
-        // Enregistrement du contrat
+        // Enregistrer le contrat
         if ($contrat->save()) {
             return back()->with('success', 'Contrat ajouté avec succès.');
         } else {
             return back()->with('danger', 'Problème lors de l\'ajout du contrat.');
         }
     }
+
 
 
     /**

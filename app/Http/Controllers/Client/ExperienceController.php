@@ -14,13 +14,25 @@ class ExperienceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function index()
+    // {
+    //     //
+    //     $userId = session()->get('utilisateurId');
+    //     $utilisateur = Utilisateur::find($userId);
+    //     $datas = Experience::where('utilisateur_id', $userId)->get();
+    //     return view('client.pages.experience', compact('datas','utilisateur'));
+    // }
+
     public function index()
     {
-        //
-        $datas = Experience::all();
-        $utilisateurs = Utilisateur::all();
-        return view('client.pages.experience', compact('datas', 'utilisateurs'));
+        $userId = session()->get('utilisateurId');
+        if (!$userId || !$utilisateur = Utilisateur::find($userId)) {
+            return redirect()->route('login')->with('error', 'Vous devez être connecté pour accéder à cette page.');
+        }
+        $datas = Experience::where('utilisateur_id', $userId)->get();
+        return view('client.pages.experience', compact('datas', 'utilisateur'));
     }
+
 
     /**
      * Show the form for creating a new resource.

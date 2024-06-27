@@ -27,7 +27,11 @@
                 <li class="dropdown"> <a href="{{route('contact')}}">Contact</a> </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="sign-up"><a class="btn-signup red-btn" href="{{route('index-login')}}"><span class="ti-briefcase"></span>login</a></li>
+                @if(session()->has('utilisateurId'))
+                <li class="sign-up"><a class="btn-signup red-btn" href="{{ route('utilogout') }}"><span class="ti-briefcase"></span>Logout</a></li>
+                @else
+                <li class="sign-up"><a class="btn-signup red-btn" href="{{ route('index-login') }}"><span class="ti-briefcase"></span>Login</a></li>
+                @endif
             </ul>
         </div>
     </div>

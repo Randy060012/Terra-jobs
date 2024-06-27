@@ -52,7 +52,7 @@ Route::group(['middleware' => ['AuthCheck']], function () {
     Route::delete('/admin/type-contrat/supression/{id}', [TyeContratController::class, 'destroy'])->name('delete-type-contrat');
 
     // Route Contrat
-    Route::get('/admin/contrat', [ContratController::class, "index"])->name('index-contrat');
+    Route::get('/admin/contrat', [ContratController::class, "index"])->name('list-contrat');
     Route::get('/admin/enregistrer/contrat', [ContratController::class, "create"])->name('ajout-contrat');
     Route::post('/admin/ajout/contrat', [ContratController::class, 'store'])->name('add-contrat');
     Route::get('/admin/edit/contrat/{id}', [ContratController::class, 'edit'])->name('edit-contrat');
@@ -88,7 +88,7 @@ Route::get('/contact', function () {
 //     return view('client.auth.register');
 // })->name('register');
 
-
+//CLIENT//
 Route::get('/', [ClientController::class, 'index'])->name('index');
 Route::get('/categorie', [ClientController::class, 'categorie'])->name('index-categorie');
 Route::get('/contrat', [ClientController::class, 'contrat'])->name('index-contrat');
@@ -102,17 +102,20 @@ Route::get('/Utilisateur/login', [UtilisateurController::class, 'login'])->name(
 Route::post('/textLg', [UtilisateurController::class, 'textLogin'])->name('utilogin');
 Route::get('/textLogout', [UtilisateurController::class, 'logout'])->name("utilogout");
 Route::group(['middleware' => ['UtiAuthCheck']], function () {
+    //Utilisateur
     Route::get('/utilisateur/dashboard', [UtilisateurController::class, 'index'])->name("index-dash");
-    Route::get('/utilisateur/edite/{id}', [UtilisateurController::class, 'edit'])->name("edit-uti");
+    Route::get('/utilisateur/edite', [UtilisateurController::class, 'edit'])->name("edit-uti");
     Route::put('/utilisateur/edition/{id}', [UtilisateurController::class, 'update'])->name('update-uti');
+    Route::get('/get-id-utilisateur', [UtilisateurController::class, 'getIdUtilisateur'])->name('get-id-utilisateur');
+    Route::get('/utilisateur/profil', [UtilisateurController::class, 'show'])->name("index-profil");
     //Education
     Route::get('/utilisateur/education', [EducationController::class, 'index'])->name("index-edu");
     Route::post('/utilisateur/education/ajout', [EducationController::class, 'store'])->name('add-edu');
     Route::put('/utilisateur/education/modification', [EducationController::class, 'update'])->name('update-edu');
     Route::delete('/utilisateur/education/supression/{id}', [EducationController::class, 'destroy'])->name('delete-edu');
-   //Experience
-   Route::get('/utilisateur/experience', [ExperienceController::class, 'index'])->name("index-exp");
-   Route::post('/utilisateur/experience/ajout', [ExperienceController::class, 'store'])->name('add-exp');
-   Route::put('/utilisateur/experience/modification', [ExperienceController::class, 'update'])->name('update-exp');
-   Route::delete('/utilisateur/experience/supression/{id}', [ExperienceController::class, 'destroy'])->name('delete-exp');
+    //Experience
+    Route::get('/utilisateur/experience', [ExperienceController::class, 'index'])->name("index-exp");
+    Route::post('/utilisateur/experience/ajout', [ExperienceController::class, 'store'])->name('add-exp');
+    Route::put('/utilisateur/experience/modification', [ExperienceController::class, 'update'])->name('update-exp');
+    Route::delete('/utilisateur/experience/supression/{id}', [ExperienceController::class, 'destroy'])->name('delete-exp');
 });

@@ -118,14 +118,13 @@
 
 
 <!-- ====================== Fin Détail de l'Emploi 2 ================ -->
-
-<section class="newsletter theme-bg" style="background-image:url('client/assets/img/bg-new.png')">
+<section class="newsletter theme-bg" style="background-image:url(client/assets/img/bg-new.png)">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading light">
-                    <h2>Abonnez-vous à Notre Newsletter !</h2>
-                    <p>Lorem Ipsum est simplement un texte fictif de l'industrie de l'impression et de la composition typographique. Lorem Ipsum est le texte fictif standard de l'industrie depuis le 1500.</p>
+                    <h2>Abonnez-vous à notre Newsletter !</h2>
+                    <p>Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500.</p>
                 </div>
             </div>
         </div>
@@ -133,7 +132,7 @@
             <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
                 <div class="newsletter-box text-center">
                     <div class="input-group"> <span class="input-group-addon"><span class="ti-email theme-cl"></span></span>
-                        <input type="text" class="form-control" placeholder="Entrez votre E-mail...">
+                        <input type="text" class="form-control" placeholder="Entrez votre email...">
                     </div>
                     <button type="button" class="btn theme-btn btn-radius btn-m">S'abonner</button>
                 </div>

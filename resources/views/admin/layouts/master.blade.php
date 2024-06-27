@@ -194,7 +194,7 @@
     <script src="{{URL::asset('admin/js/custom.min.js')}}"></script>
     <script src="{{URL::asset('admin/js/demo.js')}}"></script>
     <script src="{{URL::asset('admin/js/styleSwitcher.js')}}"></script>
-    <script src=" {{asset('admin/sweetalerte2/sweetalert2.min.js')}} "></script>
+    <script src=" {{asset('admin/sweetalerte2/sweetalert2.min.js')}} "></script> 
     <script src=" {{asset('admin/toastr/toastr.min.js')}} "></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -34,6 +34,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @if(session()->has('utilisateurId'))
                                 @foreach ($datas as $data)
                                 <tr>
                                     <th scope="row">{{ $loop->index +1 }}</th>
@@ -51,6 +52,7 @@
                                     </td>
                                 </tr>
                                 @endforeach
+                                @endif
                             </tbody>
                         </table>
                     </div>
@@ -68,8 +70,8 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading light">
-                    <h2>Subscribe Our Newsletter!</h2>
-                    <p>Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
+                    <h2>Abonnez-vous à notre Newsletter !</h2>
+                    <p>Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500.</p>
                 </div>
             </div>
         </div>
@@ -77,9 +79,9 @@
             <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
                 <div class="newsletter-box text-center">
                     <div class="input-group"> <span class="input-group-addon"><span class="ti-email theme-cl"></span></span>
-                        <input type="text" class="form-control" placeholder="Enter your Email...">
+                        <input type="text" class="form-control" placeholder="Entrez votre email...">
                     </div>
-                    <button type="button" class="btn theme-btn btn-radius btn-m">Subscribe</button>
+                    <button type="button" class="btn theme-btn btn-radius btn-m">S'abonner</button>
                 </div>
             </div>
         </div>
@@ -107,9 +109,7 @@
                     @csrf
                     <div class="hidden">
                         <label for="input1">First Element</label>
-                        @foreach ($utilisateurs as $utilisateur)
-                        <input type="text" class="form-control" value="{{$utilisateur->id}}" name="utilisateur_id" id="input1" placeholder="Enter first element" hidden>
-                        @endforeach
+                        <input type="hidden" class="form-control" name="utilisateur_id" id="utilisateur_id" placeholder="ID de l'utilisateur">
                     </div>
                     <div class="form-group">
                         <label>Universite</label>
@@ -160,9 +160,7 @@
                     <input type="hidden" id="education_id" name="education_id" />
                     <div class="hidden">
                         <label for="input1">First Element</label>
-                        @foreach ($utilisateurs as $utilisateur)
-                        <input type="text" class="form-control" value="{{$utilisateur->id}}" name="utilisateur_id" id="edit_uti" placeholder="Enter first element" hidden>
-                        @endforeach
+                        <input type="hidden" class="form-control" name="utilisateur_id" id="utilisateur_id" placeholder="ID de l'utilisateur">
                     </div>
                     <div class="form-group">
                         <label>Universite</label>
@@ -231,6 +229,30 @@
             }
         });
     }
+
+    // Fonction pour récupérer l'ID de l'utilisateur connecté
+    function getIdUtilisateur() {
+        $.ajax({
+            url: "{{ route('get-id-utilisateur') }}", // Remplacez par la route correcte
+            type: 'GET',
+            success: function(response) {
+                if (response.id) {
+                    // Met à jour la valeur du champ de formulaire avec l'ID de l'utilisateur
+                    $('#utilisateur_id').val(response.id);
+                } else {
+                    console.log("Erreur: " + response.error);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log("Erreur AJAX: " + error);
+            }
+        });
+    }
+
+    // Appel de la fonction pour récupérer l'ID de l'utilisateur connecté
+    $(document).ready(function() {
+        getIdUtilisateur();
+    });
 </script>
 @endsection
 

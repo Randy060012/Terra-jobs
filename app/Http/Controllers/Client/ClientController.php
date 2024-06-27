@@ -73,7 +73,7 @@ class ClientController extends Controller
     public function contrat()
     {
         //
-        $datas = Contrat::orderBy('created_at', 'asc')->paginate(8);
+        $datas = Contrat::orderBy('created_at', 'asc')->paginate(16);
         return view('client.pages.contrat', compact('datas'));
     }
 

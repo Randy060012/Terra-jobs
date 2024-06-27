@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Education;
+use App\Models\Experience;
 use App\Models\Utilisateur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +20,9 @@ class UtilisateurController extends Controller
     public function index()
     {
         //
-        return view('client.pages.dashboard');
+        $userId = session()->get('utilisateurId');
+        $utilisateur = Utilisateur::find($userId);
+        return view('client.pages.dashboard', compact('utilisateur'));
     }
 
     public function register()
@@ -32,6 +36,7 @@ class UtilisateurController extends Controller
         //
         return view('client.auth.login');
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -60,10 +65,20 @@ class UtilisateurController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        // Récupérer l'utilisateur connecté en utilisant son ID de session
+        $utilisateurId = session()->get('utilisateurId');
+        $data = Utilisateur::with(['education', 'experience'])->find($utilisateurId);
+        // Vérifier si l'utilisateur a été trouvé
+        if (!$data) {
+            // Vous pouvez rediriger l'utilisateur ou afficher une page d'erreur ici
+            return redirect()->route('errorPage')->with('error', 'Utilisateur non trouvé');
+        }
+        // Passer les données de l'utilisateur à la vue
+        return view('client.pages.profil', compact('data'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -71,11 +86,13 @@ class UtilisateurController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         //
-        $data = Utilisateur::find($id);
-        return view('client.pages.utilisateur', compact('data'));
+        $data = Utilisateur::find(session()->get('utilisateurId'));
+        // $userId = session()->get('utilisateurId');
+        $utilisateur = $data;
+        return view('client.pages.utilisateur', compact('data','utilisateur'));
     }
 
     /**
@@ -85,36 +102,6 @@ class UtilisateurController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function update(Request $request, $id)
-    // {
-    //     //
-    //     // dd($request);
-    //     $utilisateur = Utilisateur::find($id);
-    //     $utilisateur->email = $request->input('email');
-    //     $utilisateur->mdp = $request->input('mdp');
-    //     $utilisateur->nom = $request->input('nom');
-    //     $utilisateur->prenom = $request->input('prenom');
-    //     $utilisateur->telephone = $request->input('telephone');
-    //     $utilisateur->image = $request->input('image');
-    //     $utilisateur->adresse = $request->input('adresse');
-    //     $utilisateur->niveau = $request->input('niveau');
-    //     $utilisateur->specialite = $request->input('specialite');
-
-    //     // Gestion du Cv
-    //     if ($request->hasFile('file')) {
-    //         $file = $request->file('file');
-    //         $filePath = '/utiliCv/' . "file_" . time() . '_' . $file->getClientOriginalName();
-    //         $file->move(public_path('utiliCv'), $filePath);
-    //         $utilisateur->cv = $filePath;
-    //     }
-
-    //     // Enregistrement d'un utilisateur
-    //     if ($utilisateur->save()) {
-    //         return back()->with('success', 'Utilisateur modifié avec succès.');
-    //     } else {
-    //         return back()->with('danger', 'Problème lors de la modification du contrat.');
-    //     }
-    // }
 
     public function update(Request $request, $id)
     {
@@ -131,42 +118,35 @@ class UtilisateurController extends Controller
             'specialite' => 'nullable|string|max:50',
             'file' => 'nullable|file|mimes:pdf,doc,docx|max:2048'
         ]);
-
         $utilisateur = Utilisateur::find($id);
 
         if (!$utilisateur) {
             return back()->with('danger', 'Utilisateur non trouvé.');
         }
-
         $utilisateur->email = $request->input('email');
-
         if ($request->filled('mdp')) {
             $utilisateur->mdp = Hash::make($request->input('mdp'));
         }
-
         $utilisateur->nom = $request->input('nom');
         $utilisateur->prenom = $request->input('prenom');
         $utilisateur->telephone = $request->input('telephone');
         $utilisateur->adresse = $request->input('adresse');
         $utilisateur->niveau = $request->input('niveau');
         $utilisateur->specialite = $request->input('specialite');
-
         // Gestion de l'image de profil
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $imagePath = 'utili/image_' . time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('utili'), $imagePath);
+            $imagePath = 'utilisateurFile/images_' . time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('utilisateurFile'), $imagePath);
             $utilisateur->image = $imagePath;
         }
-
         // Gestion du CV
         if ($request->hasFile('file')) {
             $file = $request->file('file');
-            $filePath = 'utili/file_' . time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('utili'), $filePath);
+            $filePath = 'utilisateurFile/file_' . time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('utilisateurFile'), $filePath);
             $utilisateur->cv = $filePath;
         }
-
         // Enregistrement de l'utilisateur
         if ($utilisateur->save()) {
             return back()->with('success', 'Utilisateur modifié avec succès.');
@@ -174,9 +154,6 @@ class UtilisateurController extends Controller
             return back()->with('danger', 'Problème lors de la modification de l\'utilisateur.');
         }
     }
-
-
-
     /**
      * Remove the specified resource from storage.
      *
@@ -253,5 +230,19 @@ class UtilisateurController extends Controller
         $request->session()->regenerateToken();
         // Rediriger vers la page de connexion avec un message de succès
         return redirect('/Utilisateur/login')->with('success', 'Vous êtes déconnecté avec succès');
+    }
+
+    public function getIdUtilisateur(Request $request)
+    {
+        // Vérifie si l'ID de l'utilisateur est stocké dans la session
+        if ($request->session()->has('utilisateurId')) {
+            // Récupère l'ID de l'utilisateur depuis la session
+            $userId = $request->session()->get('utilisateurId');
+            // Retourne l'ID en format JSON avec un statut HTTP 200
+            return response()->json(['id' => $userId], 200);
+        } else {
+            // Si aucun utilisateur n'est connecté, retourne une réponse d'erreur avec un statut HTTP 401 (Non autorisé)
+            return response()->json(['error' => 'Utilisateur non connecté'], 401);
+        }
     }
 }

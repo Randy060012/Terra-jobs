@@ -13,11 +13,11 @@
                         @csrf
                         <div class="card-body">
                             <div class="row">
-                                <div class="hidden">
+                                <!-- <div class="hidden">
                                     @foreach ($users as $user)
                                     <input type="text" name="user_id" class="form-control" value="{{$user->id}}" id="exampleFormControlInput1" placeholder="" hidden />
                                     @endforeach
-                                </div>
+                                </div> -->
                                 <div class="col-xl-6 col-sm-6">
                                     <!-- <div class="mb-3">
                                         <label for="exampleFormControlInput3" class="form-label text-primary">User<span class="required">*</span></label>

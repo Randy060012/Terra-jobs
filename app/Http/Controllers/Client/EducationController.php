@@ -18,9 +18,10 @@ class EducationController extends Controller
     public function index()
     {
         //
-        $datas = Education::all();
-        $utilisateurs = Utilisateur::all();
-        return view('client.pages.education', compact('datas', 'utilisateurs'));
+        $userId = session()->get('utilisateurId');
+        $utilisateur = Utilisateur::find($userId);
+        $datas = Education::where('utilisateur_id', $userId)->get();
+        return view('client.pages.education', compact('datas','utilisateur'));
     }
 
     /**
@@ -39,11 +40,11 @@ class EducationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
- 
+
 
     public function store(Request $request)
     {
-        // dd($request);
+        dd($request);
         $messages = [
             "utilisateur_id.required" => "L'utilisateur est requis.",
         ];
