@@ -11,6 +11,8 @@
             <form>
                 <fieldset class="utf_home_form_one">
                     <div class="col-md-4 col-sm-4 padd-0">
+
+                    
                         <input type="text" class="form-control br-1" placeholder="Recherche par..." />
                     </div>
                     <div class="col-md-3 col-sm-3 padd-0">
