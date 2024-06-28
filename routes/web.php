@@ -107,7 +107,7 @@ Route::group(['middleware' => ['UtiAuthCheck']], function () {
     Route::get('/utilisateur/edite', [UtilisateurController::class, 'edit'])->name("edit-uti");
     Route::put('/utilisateur/edition/{id}', [UtilisateurController::class, 'update'])->name('update-uti');
     Route::get('/get-id-utilisateur', [UtilisateurController::class, 'getIdUtilisateur'])->name('get-id-utilisateur');
-    Route::get('/utilisateur/profil', [UtilisateurController::class, 'show'])->name("index-profil");
+    // Route::get('/utilisateur/profil', [UtilisateurController::class, 'show'])->name("index-profil");
     //Education
     Route::get('/utilisateur/education', [EducationController::class, 'index'])->name("index-edu");
     Route::post('/utilisateur/education/ajout', [EducationController::class, 'store'])->name('add-edu');
@@ -119,3 +119,4 @@ Route::group(['middleware' => ['UtiAuthCheck']], function () {
     Route::put('/utilisateur/experience/modification', [ExperienceController::class, 'update'])->name('update-exp');
     Route::delete('/utilisateur/experience/supression/{id}', [ExperienceController::class, 'destroy'])->name('delete-exp');
 });
+Route::get('/portfolio/{id}', [UtilisateurController::class, 'portfolio'])->name("portfolio");

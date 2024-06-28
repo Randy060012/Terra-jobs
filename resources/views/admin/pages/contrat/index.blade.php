@@ -34,6 +34,7 @@
                                                         <th>Titre</th>
                                                         <th>Domaine</th>
                                                         <th>Categorie</th>
+                                                        <th>Type</th>
                                                         <td>Operations</td>
                                                     </tr>
                                                 </thead>
@@ -47,6 +48,7 @@
                                                         <td>{{$data->titre}}</td>
                                                         <td>{{$data->domaine == null ? '' : $data->domaine->libelle}}</td>
                                                         <td>{{$data->categorie == null ? '' : $data->categorie->libelle}}</td>
+                                                        <td>{{$data->typecontrat == null ? '' : $data->typecontrat->libelle}}</td>
                                                         <td class="text-center">
                                                             <div class="d-flex justify-content-center align-items-center gap-2">
                                                                 <div class="d-flex">

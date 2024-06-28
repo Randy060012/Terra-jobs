@@ -4,12 +4,12 @@
 <div class="page-title">
     <div class="container">
         <div class="page-caption">
-            <h2>Browse by Categories</h2>
-            <p><a href="{{route('index')}}" title="Home">Home</a> <i class="ti-angle-double-right"></i> Browse by Categories</p>
+            <h2>Parcourir par catégories</h2>
+            <p><a href="{{route('index')}}" title="Accueil">Accueil</a> <i class="ti-angle-double-right"></i> Parcourir par catégories</p>
         </div>
     </div>
 </div>
-<!-- ================= Category start ========================= -->
+<!-- ================= Catégorie début ========================= -->
 <section class="padd-top-80 padd-bot-60">
     <div class="container">
         <div class="row">
@@ -22,7 +22,7 @@
                                 <div class="utf_category_icon"> <i class="icon-briefcase" aria-hidden="true"></i> </div>
                                 <div class="category-detail utf_category_desc_text">
                                     <h4>{{$data->libelle}}</h4>
-                                    <p>120 Jobs</p>
+                                    <p>120 Offres d'emploi</p>
                                 </div>
                             </div>
                         </div>

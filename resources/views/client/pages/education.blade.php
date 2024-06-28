@@ -1,18 +1,18 @@
 @extends('client.master')
 @section('content')
 
-<!-- ======================= Page Title ===================== -->
+<!-- ======================= Titre de la Page ===================== -->
 <div class="page-title">
     <div class="container">
         <div class="page-caption">
-            <h2>Profile Settings</h2>
-            <p><a href="{{route('index')}}" title="Home">Home</a> <i class="ti-angle-double-right"></i> Profile Settings</p>
+            <h2>Paramètres du Profil</h2>
+            <p><a href="{{route('index')}}" title="Accueil">Accueil</a> <i class="ti-angle-double-right"></i> Paramètres du Profil</p>
         </div>
     </div>
 </div>
-<!-- ======================= End Page Title ===================== -->
+<!-- ======================= Fin du Titre de la Page ===================== -->
 
-<!-- ================ Profile Settings ======================= -->
+<!-- ================ Paramètres du Profil ======================= -->
 <section class="padd-top-80 padd-bot-80">
     <div class="container">
         <div class="row">
@@ -24,12 +24,11 @@
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
-
                                 <tr>
                                     <th>Compteur</th>
-                                    <th>Universite</th>
+                                    <th>Université</th>
                                     <th>Description</th>
-                                    <th>Annee</th>
+                                    <th>Année</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -63,7 +62,7 @@
         </div>
     </div>
 </section>
-<!-- ================ End Profile Settings ======================= -->
+<!-- ================ Fin des Paramètres du Profil ======================= -->
 
 <section class="newsletter theme-bg" style="background-image:url(client/assets/img/bg-new.png)">
     <div class="container">
@@ -90,17 +89,17 @@
 
 @endsection
 
-<!-- Button trigger modal -->
+<!-- Bouton pour déclencher la modal -->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
+    Lancer la démo de la modal
 </button> -->
-<!-- Add Modal -->
+<!-- Ajouter Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Enregistrement</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -108,18 +107,18 @@
                 <form method="POST" action="{{route('add-edu')}}">
                     @csrf
                     <div class="hidden">
-                        <label for="input1">First Element</label>
+                        <label for="input1">Premier Élément</label>
                         <input type="hidden" class="form-control" name="utilisateur_id" id="utilisateur_id" placeholder="ID de l'utilisateur">
                     </div>
                     <div class="form-group">
-                        <label>Universite</label>
+                        <label>Université</label>
                         <input type="text" class="form-control" name="universite" placeholder="" required>
                     </div>
                     @error('universite')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Annee</label>
+                        <label>Année</label>
                         <input type="text" class="form-control" name="annee" placeholder="" required>
                     </div>
                     @error('annee')
@@ -143,13 +142,13 @@
     </div>
 </div>
 
-<!---Edit Modal------------>
+<!---Modifier Modal------------>
 <div class="modal fade" id="modification" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Mije a jour</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title" id="exampleModalLabel">Mise à jour</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -159,18 +158,18 @@
                     @method('PUT')
                     <input type="hidden" id="education_id" name="education_id" />
                     <div class="hidden">
-                        <label for="input1">First Element</label>
+                        <label for="input1">Premier Élément</label>
                         <input type="hidden" class="form-control" name="utilisateur_id" id="utilisateur_id" placeholder="ID de l'utilisateur">
                     </div>
                     <div class="form-group">
-                        <label>Universite</label>
+                        <label>Université</label>
                         <input type="text" class="form-control" name="universite" placeholder="" id="edit_uni" required>
                     </div>
                     @error('universite')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Annee</label>
+                        <label>Année</label>
                         <input type="text" class="form-control" name="annee" placeholder="" id="edit_ann" required>
                     </div>
                     @error('annee')
@@ -186,14 +185,13 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <button class="btn btn-primary" type="submit">Mije a jour</button>
+                        <button class="btn btn-primary" type="submit">Mise à jour</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
 
 @section('scripts')
 <script>

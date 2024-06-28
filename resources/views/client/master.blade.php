@@ -114,6 +114,7 @@
 
     <!-- Jquery js-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.0/classic/ckeditor.js"></script>
     <script src="{{asset('client/assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('client/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('client/assets/plugins/bootstrap/js/bootsnav.js')}}"></script>

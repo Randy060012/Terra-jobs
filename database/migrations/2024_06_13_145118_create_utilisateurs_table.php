@@ -25,6 +25,7 @@ class CreateUtilisateursTable extends Migration
             $table->string('adresse')->nullable();
             $table->string('niveau')->nullable();
             $table->string('specialite')->nullable();
+            $table->string('carriere')->nullable();
             $table->timestamps();
         });
     }

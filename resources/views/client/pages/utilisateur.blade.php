@@ -1,18 +1,18 @@
 @extends('client.master')
 @section('content')
 
-<!-- ======================= Page Title ===================== -->
+<!-- ======================= Titre de la Page ===================== -->
 <div class="page-title">
     <div class="container">
         <div class="page-caption">
-            <h2>Profile Settings</h2>
-            <p><a href="{{route('index')}}" title="Home">Home</a> <i class="ti-angle-double-right"></i> Profile Settings</p>
+            <h2>Paramètres du Profil</h2>
+            <p><a href="{{route('index')}}" title="Accueil">Accueil</a> <i class="ti-angle-double-right"></i> Paramètres du Profil</p>
         </div>
     </div>
 </div>
-<!-- ======================= End Page Title ===================== -->
+<!-- ======================= Fin du Titre de la Page ===================== -->
 
-<!-- ================ Profile Settings ======================= -->
+<!-- ================ Paramètres du Profil ======================= -->
 <section class="padd-top-80 padd-bot-80">
     <div class="container">
         <div class="row">
@@ -24,7 +24,7 @@
                     <div class="profile_detail_block">
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <label>Mail</label>
+                                <label>Email</label>
                                 <input type="email" name="email" class="form-control" placeholder="mail@example.com" value="{{ $data->email }}">
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
                                 <label>Nom</label>
-                                <input type="text" name="nom" class="form-control" placeholder="Last Name" value="{{ $data->nom }}">
+                                <input type="text" name="nom" class="form-control" placeholder="Nom" value="{{ $data->nom }}">
                             </div>
                         </div>
                         @error('nom')
@@ -52,7 +52,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
                                 <label>Prénoms</label>
-                                <input type="text" name="prenom" class="form-control" placeholder="First Name" value="{{ $data->prenom }}">
+                                <input type="text" name="prenom" class="form-control" placeholder="Prénoms" value="{{ $data->prenom }}">
                             </div>
                         </div>
                         @error('prenom')
@@ -69,7 +69,7 @@
                         @enderror
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <label>Photo profil</label>
+                                <label>Photo de profil</label>
                                 <input type="file" name="image" class="form-control">
                             </div>
                         </div>
@@ -96,8 +96,8 @@
                         @enderror
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <label>Niveau-scolaire</label>
-                                <input type="text" name="niveau" class="form-control" placeholder="Level" value="{{ $data->niveau }}">
+                                <label>Niveau scolaire</label>
+                                <input type="text" name="niveau" class="form-control" placeholder="Niveau" value="{{ $data->niveau }}">
                             </div>
                         </div>
                         @error('niveau')
@@ -106,24 +106,33 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
                                 <label>Spécialité</label>
-                                <input type="text" name="specialite" class="form-control" placeholder="Specialty" value="{{ $data->specialite }}">
+                                <input type="text" name="specialite" class="form-control" placeholder="Spécialité" value="{{ $data->specialite }}">
                             </div>
                         </div>
                         @error('specialite')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Carrière</label>
+                                <textarea name="carriere" id="editor">{!! $data->carriere !!}</textarea>
+                            </div>
+                        </div>
+                        @error('carriere')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="clearfix"></div>
                         <div class="col-md-12 padd-top-10 text-center">
-                            <button type="submit" class="btn btn-m theme-btn full-width">Update</button>
+                            <button type="submit" class="btn btn-m theme-btn full-width">Mettre à jour</button>
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
 </section>
-<!-- ================ End Profile Settings ======================= -->
+<!-- ================ Fin des Paramètres du Profil ======================= -->
+
 <section class="newsletter theme-bg" style="background-image:url(client/assets/img/bg-new.png)">
     <div class="container">
         <div class="row">
@@ -154,7 +163,9 @@
     toastr.success("{{Session::get('success')}}", {
         positionClass: "toast-top-right",
         closeButton: true,
-        progressBar: true,
+        progressBar: true, // Affiche la barre de progression
+        progressBarEasing: "linear", // Type d'animation de la barre de progression
+        progressBarOpacity: 0.7, // Opacité de la barre de progression
         timeOut: 5000,
         extendedTimeOut: 2000,
     });
@@ -165,10 +176,22 @@
     toastr.error("{{Session::get('error')}}", {
         positionClass: "toast-top-right",
         closeButton: true,
-        progressBar: true,
+        progressBar: true, // Affiche la barre de progression
+        progressBarEasing: "linear", // Type d'animation de la barre de progression
+        progressBarOpacity: 0.7, // Opacité de la barre de progression
         timeOut: 5000,
         extendedTimeOut: 2000,
     });
 </script>
 @endif
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 @endpush

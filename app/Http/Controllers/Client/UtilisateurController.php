@@ -80,6 +80,18 @@ class UtilisateurController extends Controller
     }
 
 
+    public function portfolio($id)
+    {
+        $data = Utilisateur::with(['education', 'experience'])->where('email','=',$id)->first();
+        // Vérifier si l'utilisateur a été trouvé
+        if (!$data) {
+            // Vous pouvez rediriger l'utilisateur ou afficher une page d'erreur ici
+            return redirect()->route('errorPage')->with('error', 'Utilisateur non trouvé');
+        }
+        // Passer les données de l'utilisateur à la vue
+        return view('client.pages.profil', compact('data'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -116,7 +128,8 @@ class UtilisateurController extends Controller
             'adresse' => 'nullable|string',
             'niveau' => 'nullable|string|max:50',
             'specialite' => 'nullable|string|max:50',
-            'file' => 'nullable|file|mimes:pdf,doc,docx|max:2048'
+            'file' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'carriere'=>'nullable|string|max:500'
         ]);
         $utilisateur = Utilisateur::find($id);
 
@@ -133,6 +146,7 @@ class UtilisateurController extends Controller
         $utilisateur->adresse = $request->input('adresse');
         $utilisateur->niveau = $request->input('niveau');
         $utilisateur->specialite = $request->input('specialite');
+        $utilisateur->carriere = $request->input('carriere');
         // Gestion de l'image de profil
         if ($request->hasFile('image')) {
             $image = $request->file('image');

@@ -23,34 +23,33 @@
                         <div class="row">
                             <div class="col-md-4 text-center user_profile_img"> <img src="{{asset($contrat->image)}}" class="width-100" alt="" />
                                 <h4 class="meg-0">{{$contrat->titre}}</h4>
-                                <span>512 Big Tower, New Delhi</span>
+                                <!-- <span>512 Big Tower, New Delhi</span>
                                 <div class="text-center">
-                                    <button type="button" data-toggle="modal" data-target="#signin" class="btn-job theme-btn job-apply">Apply Now</button>
-                                </div>
+                                    <button type="button" data-toggle="modal" data-target="#signin" class="btn-job theme-btn job-apply">Postuler</button>
+                                </div> -->
                             </div>
                             <div class="col-md-8 user_job_detail">
-                                <div class="col-sm-12 mrg-bot-10"> <i class="ti-credit-card padd-r-10"></i>20K To 50K/Month </div>
+                                <div class="col-sm-12 mrg-bot-10"> <i class="ti-credit-card padd-r-10"></i>20K à 50K/Mois </div>
                                 <div class="col-sm-12 mrg-bot-10"> <i class="ti-mobile padd-r-10"></i>91 234 567 8765 </div>
                                 <div class="col-sm-12 mrg-bot-10"> <i class="ti-email padd-r-10"></i>mail@example.com </div>
-                                <div class="col-sm-12 mrg-bot-10"> <i class="ti-calendar padd-r-10"></i><span class="full-type">Full Time</span> </div>
-                                <div class="col-sm-12 mrg-bot-10"> <i class="ti-user padd-r-10"></i><span class="cl-danger">7 Open Position</span> </div>
-                                <div class="col-sm-12 mrg-bot-10"> <i class="ti-shield padd-r-10"></i>3 Year Exp. </div>
+                                <div class="col-sm-12 mrg-bot-10"> <i class="ti-calendar padd-r-10"></i><span class="full-type">Temps Plein</span> </div>
+                                <div class="col-sm-12 mrg-bot-10"> <i class="ti-user padd-r-10"></i><span class="cl-danger">7 Positions Ouvertes</span> </div>
+                                <div class="col-sm-12 mrg-bot-10"> <i class="ti-shield padd-r-10"></i>3 Ans d'Expérience </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="detail-wrapper">
                     <div class="detail-wrapper-header">
-                        <h4>Job Description</h4>
+                        <h4>Description du Travail</h4>
                     </div>
                     <div class="detail-wrapper-body">
-                        <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled a</p>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate </p>
+                        {{ html_entity_decode(strip_tags($contrat->description)) }}
                     </div>
                 </div>
                 <div class="detail-wrapper">
                     <div class="detail-wrapper-header">
-                        <h4>Job Skill</h4>
+                        <h4>Compétences Requises</h4>
                     </div>
                     <div class="detail-wrapper-body">
                         <ul class="detail-list">
@@ -62,7 +61,7 @@
                 </div>
                 <div class="detail-wrapper">
                     <div class="detail-wrapper-header">
-                        <h4>Location</h4>
+                        <h4>Localisation</h4>
                     </div>
                     <div class="detail-wrapper-body">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.0515265723353!2d1.1760269!3d6.1829752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102158e2d5eaa3b5%3A0xf1f254a2a3898edd!2sFr%C3%A8res%20Franciscains%20d'Adidogom%C3%A9!5e0!3m2!1sen!2stt!4v1647999163292!5m2!1sen!2stt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -70,13 +69,13 @@
                 </div>
                 <div class="detail-wrapper">
                     <div class="detail-wrapper-header">
-                        <h4>Requirements</h4>
+                        <h4>Exigences</h4>
                     </div>
                     <div class="detail-wrapper-body">
                         <ul class="detail-list">
-                            <li>There are many variations of passages of Lorem Ipsum available</li>
-                            <li>the majority have suffered alteration in some form slightly</li>
-                            <li>you need to be sure there isn't anything embarrassing hidden</li>
+                            <li>Il existe de nombreuses variations de passages de Lorem Ipsum disponibles.</li>
+                            <li>La majorité a subi une altération sous une forme légère.</li>
+                            <li>Vous devez vous assurer qu'il n'y a rien d'embarrassant caché.</li>
                         </ul>
                     </div>
                 </div>
@@ -88,7 +87,7 @@
                     <!-- Start: Job Overview -->
                     <div class="widget-boxed">
                         <div class="widget-boxed-header">
-                            <h4><i class="ti-location-pin padd-r-10"></i>Fiche d'information</h4>
+                            <h4><i class="ti-location-pin padd-r-10"></i>Fiche d'Information</h4>
                         </div>
                         <div class="widget-boxed-body">
                             <div class="side-list no-border">
@@ -103,7 +102,7 @@
                     </div>
                     <div class="widget-boxed">
                         <div class="widget-boxed-header">
-                            <h4><i class="ti-time padd-r-10"></i>Location</h4>
+                            <h4><i class="ti-time padd-r-10"></i>Localisation</h4>
                         </div>
                         <div class="widget-boxed-body">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.566512514854!2d76.8192921147794!3d30.702470481647698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fecca1d6c0001%3A0xe4953728a502a8e2!2sChandigarh!5e0!3m2!1sen!2sin!4v1520136168627" width="100%" height="360" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -116,7 +115,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h4 class="mrg-bot-30">Similar Jobs</h4>
+                <h4 class="mrg-bot-30">Offres Similaires</h4>
             </div>
         </div>
         <div class="row">
@@ -148,7 +147,7 @@
         </div>
     </div>
 </section>
-<!-- ====================== End Job Detail 2 ================ -->
+<!-- ====================== Start Job Detail 2 ================ -->
 
 <section class="newsletter theme-bg" style="background-image:url('client/assets/img/bg-new.png')">
     <div class="container">

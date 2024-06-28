@@ -102,7 +102,8 @@ class ClientController extends Controller
     public function showContrat($slug)
     {
         // Récupérer le contrat en utilisant le slug
-        $contrat = Contrat::where('slug', $slug)->firstOrFail();
+        $contrat = Contrat::with(['domaine', 'typecontrat','categorie'])->where('slug', $slug)->firstOrFail();
+        // dd($contrat->typecontrat);
 
         // Récupérer les contrats similaires avec le même domaine
         $contratsSimilaires = Contrat::where('domaine_id', $contrat->domaine_id)

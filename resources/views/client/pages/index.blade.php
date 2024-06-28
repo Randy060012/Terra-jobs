@@ -135,7 +135,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
                     <h2>Catégories d'Emploi</h2>
-                    <p>Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500.</p>
+                    <p>Découvrez nos catégories d'emploi variées, allant de l'informatique à l'ingénierie, en passant par le design et la gestion. Chaque domaine offre des opportunités uniques pour développer vos compétences et évoluer professionnellement.</p>
                 </div>
             </div>
         </div>

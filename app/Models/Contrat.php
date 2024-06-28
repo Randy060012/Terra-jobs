@@ -34,7 +34,7 @@ class Contrat extends Model
 
     public function typecontrat(): BelongsTo
     {
-        return $this->belongsTo(TypeDeContrat::class);
+        return $this->belongsTo(TypeDeContrat::class,'type_de_contrat_id');
     }
 
     public function categorie(): BelongsTo

@@ -1,40 +1,40 @@
 @extends('client.master')
 @section('content')
-<!-- ======================= Page Title ===================== -->
+<!-- ======================= Titre de la page ===================== -->
 <div class="page-title">
     <div class="container">
         <div class="page-caption">
-            <h2>Get In Touch</h2>
-            <p><a href="{{route('index')}}" title="Home">Accueil</a> <i class="ti-angle-double-right"></i> Contact</p>
+            <h2>Nous Contacter</h2>
+            <p><a href="{{route('index')}}" title="Accueil">Accueil</a> <i class="ti-angle-double-right"></i> Contact</p>
         </div>
     </div>
 </div>
-<!-- ======================= End Page Title ===================== -->
+<!-- ======================= Fin du titre de la page ===================== -->
 
-<!-- ================ Fill Forms ======================= -->
+<!-- ================ Formulaire de contact ======================= -->
 <section class="padd-top-80 padd-bot-70">
     <div class="container">
         <div class="col-md-6 col-sm-6">
             <div class="row">
                 <form class="mrg-bot-40">
                     <div class="col-md-6 col-sm-6">
-                        <label>Name:</label>
-                        <input type="text" class="form-control" placeholder="Name" />
+                        <label>Nom :</label>
+                        <input type="text" class="form-control" placeholder="Nom" />
                     </div>
                     <div class="col-md-6 col-sm-6">
-                        <label>Email:</label>
+                        <label>Email :</label>
                         <input type="email" class="form-control" placeholder="Email" />
                     </div>
                     <div class="col-md-12 col-sm-12">
-                        <label>Subject:</label>
-                        <input type="text" class="form-control" placeholder="Subject" />
+                        <label>Sujet :</label>
+                        <input type="text" class="form-control" placeholder="Sujet" />
                     </div>
                     <div class="col-md-12 col-sm-12">
-                        <label>Message:</label>
+                        <label>Message :</label>
                         <textarea class="form-control height-120" placeholder="Message"></textarea>
                     </div>
                     <div class="col-md-12 col-sm-12">
-                        <button class="btn theme-btn" name="submit">Send Message</button>
+                        <button class="btn theme-btn" name="submit">Envoyer le message</button>
                     </div>
                 </form>
             </div>
@@ -44,7 +44,7 @@
         </div>
     </div>
 </section>
-<!-- ================ End Fill Forms ======================= -->
+<!-- ================ Fin du formulaire de contact ======================= -->
 
 <section class="newsletter theme-bg" style="background-image:url(client/assets/img/bg-new.png)">
     <div class="container">

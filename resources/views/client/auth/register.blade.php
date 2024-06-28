@@ -1,67 +1,65 @@
 @extends('client.master')
 @section('content')
-<!-- ======================= Start Page Title ===================== -->
+<!-- ======================= Début du Titre de la Page ===================== -->
 <div class="page-title">
     <div class="container">
         <div class="page-caption">
-            <h2>Create an Account</h2>
-            <p><a href="{{route('index')}}" title="Home">Accueil</a> <i class="ti-angle-double-right"></i> SignUp</p>
+            <h2>Créer un compte</h2>
+            <p><a href="{{route('index')}}" title="Accueil">Accueil</a> <i class="ti-angle-double-right"></i> Inscription</p>
         </div>
     </div>
 </div>
-<!-- ======================= End Page Title ===================== -->
+<!-- ======================= Fin du Titre de la Page ===================== -->
 
-<!-- ====================== Start Signup Form ============= -->
+<!-- ====================== Début du Formulaire d'Inscription ============= -->
 <section class="padd-top-80 padd-bot-80">
     <div class="container">
         <div class="log-box">
-            <form class="log-form" method="post" action="{{ route('register') }}">
+            <form class="log-form row" method="post" action="{{ route('register') }}">
                 @csrf
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-group">
-                        <label>Nom</label>
-                        <input type="text" name="nom" class="form-control" placeholder="Nom" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-group">
-                        <label>Prenom</label>
-                        <input type="text" name="prenom" class="form-control" placeholder="Prenom" required>
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" class="form-control" placeholder="Nom" required>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <div class="form-group">
-                        <label>Mot de passe</label>
-                        <input type="password" name="mdp" class="form-control" placeholder="********" required>
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" class="form-control" placeholder="Prénom" required>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <div class="form-group">
-                        <label>Confirme</label>
-                        <input type="password" name="re_password" class="form-control" placeholder="********" required>
+                        <label for="mdp">Mot de passe</label>
+                        <input type="password" id="mdp" name="mdp" class="form-control" placeholder="********" required>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        <label for="re_password">Confirmer le mot de passe</label>
+                        <input type="password" id="re_password" name="re_password" class="form-control" placeholder="********" required>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group text-center mrg-top-15">
-                        <button type="submit" class="btn theme-btn btn-m full-width">Soumettre</button>
+                        <button type="submit" class="btn theme-btn btn-m full-width">S'inscrire</button>
                     </div>
                     <div class="form-group text-center mrg-top-15">
-                    <a href="{{ route('index-login') }}" class="btn theme-btn full-width btn-m">Login</a>
+                        <a href="{{ route('index-login') }}" class="btn theme-btn full-width btn-m">Se connecter</a>
                     </div>
                 </div>
-                <div class="clearfix"></div>
             </form>
-
         </div>
     </div>
 </section>
-<!-- ====================== End Signup Form ============= -->
+<!-- ====================== Fin du Formulaire d'Inscription ============= -->
 
 <section class="newsletter theme-bg" style="background-image:url(client/assets/img/bg-new.png)">
     <div class="container">

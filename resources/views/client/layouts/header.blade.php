@@ -28,9 +28,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if(session()->has('utilisateurId'))
-                <li class="sign-up"><a class="btn-signup red-btn" href="{{ route('utilogout') }}"><span class="ti-briefcase"></span>Logout</a></li>
+                <li class="sign-up"><a class="btn-signup red-btn" href="{{ route('utilogout') }}"><span class="ti-power-off"></span> Déconnexion</a></li>
                 @else
-                <li class="sign-up"><a class="btn-signup red-btn" href="{{ route('index-login') }}"><span class="ti-briefcase"></span>Login</a></li>
+                <li class="sign-up"><a class="btn-signup red-btn" href="{{ route('index-login') }}"><span class="ti-key"></span> Connexion</a></li>
                 @endif
             </ul>
         </div>

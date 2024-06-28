@@ -1,18 +1,18 @@
 @extends('client.master')
 @section('content')
 
-<!-- ======================= Start Page Title ===================== -->
+<!-- ======================= Début du Titre de la Page ===================== -->
 <div class="page-title">
     <div class="container">
         <div class="page-caption">
-            <h2>Resume Detail</h2>
-            <p><a href="#" title="Home">Home</a> <i class="ti-angle-double-right"></i> Resume Detail</p>
+            <h2>Port Folio</h2>
+            <p><a href="#" title="Accueil">Accueil</a> <i class="ti-angle-double-right"></i> Port Folio</p>
         </div>
     </div>
 </div>
-<!-- ======================= End Page Title ===================== -->
+<!-- ======================= Fin du Titre de la Page ===================== -->
 
-<!-- ====================== Resume Detail ================ -->
+<!-- ====================== Port Folio ================ -->
 <section class="padd-top-80 padd-bot-80">
     <div class="container">
         <div class="row">
@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="col-md-4 text-center user_profile_img mrg-bot-30"> <img src="{{asset($data->image)}}" class="img-circle width-100" alt="" />
                                 <h4 class="meg-0">{{$data->nom}}</h4>
-                                <span>Front End Designer</span>
+                                <span>Designer Front-End</span>
                             </div>
                             <div class="col-md-8 user_job_detail">
                                 <div class="col-md-12 mrg-bot-10"> <i class="ti-location-pin padd-r-10"></i>{{$data->adresse}}</div>
@@ -37,16 +37,15 @@
                 </div>
                 <div class="detail-wrapper">
                     <div class="detail-wrapper-header">
-                        <h4>Career</h4>
+                        <h4>Parcours Professionnel</h4>
                     </div>
                     <div class="detail-wrapper-body">
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.</p>
-                        <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                        <p>{{html_entity_decode(strip_tags($data->carriere))}}</p>
                     </div>
                 </div>
                 <div class="detail-wrapper">
                     <div class="detail-wrapper-header">
-                        <h4>Education</h4>
+                        <h4>Éducation</h4>
                     </div>
                     <div class="detail-wrapper-body">
                         @foreach($data->education as $education)
@@ -63,7 +62,7 @@
                 </div>
                 <div class="detail-wrapper">
                     <div class="detail-wrapper-header">
-                        <h4>Work & Experience</h4>
+                        <h4>Expérience Professionnelle</h4>
                     </div>
                     <div class="detail-wrapper-body">
                         @foreach($data->experience as $experience)
@@ -85,52 +84,53 @@
                 <div class="sidebar">
                     <div class="widget-boxed">
                         <div class="text-center">
-                            <button type="submit" class="btn btn-m btn-success">Download Resume</button>
+                            <button type="submit" class="btn btn-m btn-success">Télécharger le CV</button>
                         </div>
                     </div>
                     <div class="widget-boxed">
                         <div class="widget-boxed-header">
-                            <h4><i class="ti-location-pin padd-r-10"></i>Location</h4>
+                            <h4><i class="ti-location-pin padd-r-10"></i>Localisation</h4>
                         </div>
                         <div class="widget-boxed-body">
                             <div class="side-list no-border">
                                 <ul>
-                                    <!-- <li><i class="ti-credit-card padd-r-10"></i>Package: 20K To 50K/Month</li>
+                                    <!-- <li><i class="ti-credit-card padd-r-10"></i>Forfait: 20K à 50K/Mois</li>
                                     <li><i class="ti-world padd-r-10"></i>https://www.example.com</li> -->
                                     <li><i class="ti-mobile padd-r-10"></i>{{$data->telephone}}</li>
                                     <li><i class="ti-email padd-r-10"></i>{{$data->email}}</li>
                                     <li><i class="ti-pencil-alt padd-r-10"></i>{{$data->niveau}}</li>
-                                    <!-- <li><i class="ti-shield padd-r-10"></i>3 Year Exp.</li> -->
+                                    <!-- <li><i class="ti-shield padd-r-10"></i>3 ans d'expérience</li> -->
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <!-- End: Job Overview -->
+                    <!-- Fin: Aperçu du travail -->
 
-                    <!-- Start: Opening hour -->
+                    <!-- Début: Heures d'ouverture -->
                     <div class="widget-boxed">
                         <div class="widget-boxed-header">
-                            <h4><i class="ti-headphone padd-r-10"></i>Contact Now</h4>
+                            <h4><i class="ti-headphone padd-r-10"></i>Contactez Maintenant</h4>
                         </div>
                         <div class="widget-boxed-body">
                             <form>
-                                <input type="text" class="form-control" placeholder="Name *">
+                                <input type="text" class="form-control" placeholder="Nom *">
                                 <input type="text" class="form-control" placeholder="Email *">
-                                <input type="text" class="form-control" placeholder="Phone">
+                                <input type="text" class="form-control" placeholder="Téléphone">
                                 <textarea class="form-control height-140" placeholder="Message..."></textarea>
-                                <button class="btn theme-btn full-width mrg-bot-20">Send Email</button>
+                                <button class="btn theme-btn full-width mrg-bot-20">Envoyer un Email</button>
                             </form>
                         </div>
                     </div>
-                    <!-- End: Opening hour -->
+                    <!-- Fin: Heures d'ouverture -->
                 </div>
             </div>
-            <!-- End Sidebar -->
+            <!-- Fin Sidebar -->
         </div>
-        <!-- End Row -->
+        <!-- Fin Row -->
     </div>
 </section>
-<!-- ====================== End Resume Detail ================ -->
+<!-- ====================== Fin du Port Folio ================ -->
+
 <section class="newsletter theme-bg" style="background-image:url(client/assets/img/bg-new.png)">
     <div class="container">
         <div class="row">

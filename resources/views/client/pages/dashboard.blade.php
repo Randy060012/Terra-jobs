@@ -1,51 +1,51 @@
 @extends('client.master')
 @section('content')
 
-<!-- ======================= Page Title ===================== -->
+<!-- ======================= Titre de la page ===================== -->
 <div class="page-title">
     <div class="container">
         <div class="page-caption">
-            <h2>Profile Settings</h2>
-            <p><a href="{{route('index')}}" title="Home">Home</a> <i class="ti-angle-double-right"></i> Profile Settings</p>
+            <h2>Paramètres du profil</h2>
+            <p><a href="{{route('index')}}" title="Accueil">Accueil</a> <i class="ti-angle-double-right"></i> Paramètres du profil</p>
         </div>
     </div>
 </div>
-<!-- ======================= End Page Title ===================== -->
+<!-- ======================= Fin du titre de la page ===================== -->
 
-<!-- ================ Profile Settings ======================= -->
+<!-- ================ Paramètres du profil ======================= -->
 <section class="padd-top-80 padd-bot-80">
     <div class="container">
         <div class="row">
-        @include('client.layouts.liste')
+            @include('client.layouts.liste')
             <div class="col-md-9">
                 <div id="dashboard_listing_blcok">
                     <div class="col-md-4 col-sm-4">
                         <div class="statusbox">
-                            <h3>Balance Credit</h3>
+                            <h3>Crédit de solde</h3>
                             <div class="statusbox-content">
                                 <p class="ic_status_item ic_col_one"><i class="fa fa-balance-scale"></i></p>
-                                <h2>$215,00</h2>
-                                <span>Updated 02 Jan 2021</span>
+                                <h2>215,00 $</h2>
+                                <span>Mis à jour le 02 Jan 2021</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="statusbox">
-                            <h3>View Progress</h3>
+                            <h3>Voir les progrès</h3>
                             <div class="statusbox-content">
                                 <p class="ic_status_item ic_col_two"><i class="fa fa-line-chart"></i></p>
-                                <h2>$280,00</h2>
-                                <span>Updated 02 Jan 2021</span>
+                                <h2>280,00 $</h2>
+                                <span>Mis à jour le 02 Jan 2021</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="statusbox">
-                            <h3>View Payments</h3>
+                            <h3>Voir les paiements</h3>
                             <div class="statusbox-content">
                                 <p class="ic_status_item ic_col_three"><i class="fa fa-cc-paypal"></i></p>
-                                <h2>$350,00</h2>
-                                <span>Updated 02 Jan 2021</span>
+                                <h2>350,00 $</h2>
+                                <span>Mis à jour le 02 Jan 2021</span>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
         </div>
     </div>
 </section>
-<!-- ================ End Profile Settings ======================= -->
+<!-- ================ Fin des paramètres du profil ======================= -->
 
 <section class="newsletter theme-bg" style="background-image:url(client/assets/img/bg-new.png)">
     <div class="container">

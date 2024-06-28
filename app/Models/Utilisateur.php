@@ -20,6 +20,7 @@ class Utilisateur extends Model
         'adresse',
         'niveau',
         'specialite',
+        'carriere',
     ];
 
     public function education(): HasMany
