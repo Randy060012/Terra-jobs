@@ -155,12 +155,13 @@ class UtilisateurController extends Controller
             $utilisateur->image = $imagePath;
         }
         // Gestion du CV
-        if ($request->hasFile('file')) {
-            $file = $request->file('file');
+        if ($request->hasFile('cv')) {
+            $file = $request->file('cv');
             $filePath = 'utilisateurFile/file_' . time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('utilisateurFile'), $filePath);
             $utilisateur->cv = $filePath;
         }
+
         // Enregistrement de l'utilisateur
         if ($utilisateur->save()) {
             return back()->with('success', 'Utilisateur modifié avec succès.');

@@ -23,7 +23,7 @@ class AuthAdminController extends Controller
 
 
         $user = User::where('email' , '=' , $request->email)->first();
-        
+
         if($user){
             if(Hash::check($request->password ,$user->password)){
                 $request->session()->put('userId' , $user->id);
@@ -32,7 +32,7 @@ class AuthAdminController extends Controller
             }else{
                 return back()->with('fail', 'Utilisateur introuvable');
             }
-            
+
         }else{
             return back()->with('fail', 'Utilisateur introuvable');
         }
@@ -43,7 +43,7 @@ class AuthAdminController extends Controller
         if(Session()->has('userId')){
             Session()->pull('userId');
             Session()->pull('userNom');
-            return redirect('/');
+            return redirect('/auth/login')->with('success', 'Vous êtes déconnecté avec succès');
         }
     }
 }

@@ -94,7 +94,7 @@
                                 <ul>
                                     <li>
                                         <i class="ti-credit-card padd-r-10"></i>
-                                        <a href="{{ asset($contrat->fichier) }}" target="_blank">{{ $contrat->fichier }}</a>
+                                        <a href="{{ asset($contrat->fichier) }}" target="_blank" download>{{ $contrat->fichier }}</a>
                                     </li>
                                 </ul>
                             </div>

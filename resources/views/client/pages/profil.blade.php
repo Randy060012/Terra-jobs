@@ -84,7 +84,7 @@
                 <div class="sidebar">
                     <div class="widget-boxed">
                         <div class="text-center">
-                            <button type="submit" class="btn btn-m btn-success">Télécharger le CV</button>
+                            <a href="{{ asset($data->cv) }}" class="btn btn-m btn-success" download>Télécharger le CV</a>
                         </div>
                     </div>
                     <div class="widget-boxed">

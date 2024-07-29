@@ -86,7 +86,7 @@ Route::get('/contact', function () {
 
 // Route::get('/register', function () {
 //     return view('client.auth.register');
-// })->name('register');
+// })->name('register'); 
 
 //CLIENT//
 Route::get('/', [ClientController::class, 'index'])->name('index');

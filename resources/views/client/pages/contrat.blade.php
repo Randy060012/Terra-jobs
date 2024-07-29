@@ -18,7 +18,7 @@
             <form>
                 <fieldset class="search-form">
                     <div class="col-md-4 col-sm-4">
-                        <input type="text" class="form-control" placeholder="Titre du poste, Mots-clés ou Nom de l'entreprise..." />
+                        <input type="text" class="form-control" placeholder="Titre du poste, Mots-clés..." />
                     </div>
                     <div class="col-md-3 col-sm-3">
                         <select class="wide form-control">
@@ -69,7 +69,7 @@
             <div class="col-md-5 col-sm-4 col-xs-12">
                 <h4 class="job_vacancie">{{ $datas->total() }} Offres d'Emploi & Vacances</h4>
             </div>
-            <div class="col-md-7 col-sm-8 col-xs-12">
+            <!-- <div class="col-md-7 col-sm-8 col-xs-12">
                 <div class="fl-right short_by_filter_list">
                     <div class="search-wide short_by_til">
                         <h5>Trier Par</h5>
@@ -90,7 +90,7 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="row">

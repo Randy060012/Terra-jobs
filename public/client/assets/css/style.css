@@ -10,7 +10,7 @@
 # Job Detail Style
 # Icons Style
 # Footer Style
-# Dashboard Style 
+# Dashboard Style
 -----------------------------------------------*/
 
 /*=====================================================================
@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 }
 p a {
-	color: #26ae61;
+	color: #28A745;
 }
 a {
 	color: #334e6f;
@@ -114,7 +114,7 @@ a.btn.call-btn {
 	background: #ffffff;
 	border-radius: 4px;
 	padding: 0.8em 2em;
-	color: #26ae61;
+	color: #28A745;
 	text-transform: capitalize;
 }
 .d-block {
@@ -182,7 +182,7 @@ a.btn.call-btn {
 	color:#ffffff
 }
 .page-caption p a:hover{
-	color:#26ae61
+	color:#28A745
 }
 .page-caption p i{
 	padding:0 5px;
@@ -256,32 +256,32 @@ button:hover, input:hover, input:focus, button:focus {
 }
 .btn-general-white-bg {
 	background: #ffffff;
-	color: #26ae61;
+	color: #28A745;
 	border-color: #ffffff;
 }
 .btn-general-white-bg:hover, .btn-general-white-bg:focus {
-	background: #26ae61;
+	background: #28A745;
 	color: #ffffff;
-	border-color: #26ae61;
+	border-color: #28A745;
 }
 .btn-general-theme-bg {
-	background: #26ae61;
+	background: #28A745;
 	color: #ffffff;
-	border-color: #26ae61;
+	border-color: #28A745;
 }
 .btn-general-theme-bg:hover, .btn-general-theme-bg:focus {
 	background: #ffffff;
-	color: #26ae61;
+	color: #28A745;
 	border-color: #ffffff;
 }
 .btn-general-theme-trans-bg {
 	background: rgba(255, 58, 114,0.1);
-	border-color: #26ae61;
-	color: #26ae61;
+	border-color: #28A745;
+	color: #28A745;
 }
 .btn-general-theme-trans-bg:hover, .btn-general-theme-trans-bg:focus {
 	background: rgba(255, 58, 114,1);
-	border-color: #26ae61;
+	border-color: #28A745;
 	color: #ffffff;
 }
 .full-width {
@@ -316,7 +316,7 @@ textarea.form-control {
 	border: 2px solid #dde6ef;
 }
 .form-control:hover, .form-control:focus {
-	border: 2px solid #26ae61;
+	border: 2px solid #28A745;
 	-webkit-box-shadow: 0 1px 1px rgba(7,177,7,.075);
 	box-shadow: 0 1px 1px rgba(7,177,7,.075);
 	outline: none;
@@ -333,7 +333,7 @@ textarea.form-control {
 }
 #signin, #apply-job{
 	background:rgba(0, 0, 0, 0.85)
-} 
+}
 span.input-group-addon {
 	color: #677782;
 	border-color: #dde6ef;
@@ -355,20 +355,20 @@ nav.navbar.navbar-default.navbar-fixed.white.bootsnav.shadow.on.menu-center.no-f
 	box-shadow: none;
 }
 .btn.btn-primary {
-	border: 1px solid #26ae61;
+	border: 1px solid #28A745;
 	border-radius: 0px;
 	width: 100%;
 	height: 46px;
-	background: #26ae61;
+	background: #28A745;
 	text-transform: capitalize;
 	font-size: 16px;
 }
 .btn.btn-primary:hover, .btn.btn-primary:focus {
-	border: 1px solid #26ae61;
+	border: 1px solid #28A745;
 	border-radius: 0px;
 	width: 100%;
 	height: 46px;
-	background: #26ae61;
+	background: #28A745;
 	text-transform: capitalize;
 	font-size: 16px;
 }
@@ -388,7 +388,7 @@ nav.navbar.navbar-default.navbar-fixed.white.bootsnav.shadow.on.menu-center.no-f
 }
 .bootstrap-select.btn-group .dropdown-menu li a:hover {
 	box-shadow: none;
-	background: #26ae61;
+	background: #28A745;
 	color: #ffffff;
 }
 .btn-group.open .dropdown-toggle {
@@ -407,7 +407,7 @@ button.btn.dropdown-toggle.btn-default {
 	height: 46px;
 }
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
-	background-color: #26ae61;
+	background-color: #28A745;
 }
 /*------ general: Choosen Select Box ----*/
 .chosen-container-single .chosen-single {
@@ -614,8 +614,8 @@ ul.employer_detail_item li{
 	z-index: 2;
 	color: #ffffff;
 	cursor: pointer;
-	background-color:#26ae61;
-	border-color: #26ae61;
+	background-color:#28A745;
+	border-color: #28A745;
 	-webkit-box-shadow: 0 2px 10px 0 #d8dde6;
 	box-shadow: 0 2px 10px 0 #d8dde6;
 }
@@ -627,7 +627,7 @@ ul.employer_detail_item li{
 .utf_create_company_area .table-responsive a.cl-success{
 	background:#0fb76b;
 	color:#ffffff;
-	border-radius:40px;	
+	border-radius:40px;
 }
 .utf_create_company_area .table-responsive a.cl-success:hover{
 	background:#ffffff;
@@ -639,7 +639,7 @@ ul.employer_detail_item li{
 .utf_create_company_area .table-responsive a.cl-danger{
 	background:#f21136;
 	color:#ffffff;
-	border-radius:40px;	
+	border-radius:40px;
 }
 .utf_create_company_area .table-responsive a.cl-danger:hover{
 	background:#ffffff;
@@ -651,7 +651,7 @@ ul.employer_detail_item li{
 .utf_manage_jobs_area .table-responsive a.cl-success{
 	background:#0fb76b;
 	color:#ffffff;
-	border-radius:40px;	
+	border-radius:40px;
 }
 .utf_manage_jobs_area .table-responsive a.cl-success:hover{
 	background:#ffffff;
@@ -663,7 +663,7 @@ ul.employer_detail_item li{
 .utf_manage_jobs_area .table-responsive a.cl-danger{
 	background:#f21136;
 	color:#ffffff;
-	border-radius:40px;	
+	border-radius:40px;
 }
 .utf_manage_jobs_area .table-responsive a.cl-danger:hover{
 	background:#ffffff;
@@ -768,7 +768,7 @@ table.table td .label {
     Global Settings
 ========================================================================== */
 .theme-bg {
-	background: #26ae61;
+	background: #28A745;
 	color: #ffffff;
 }
 .theme-bg p {
@@ -784,7 +784,7 @@ table.table td .label {
 	background: #f1f4fb;
 }
 .theme-cl {
-	color: #26ae61;
+	color: #28A745;
 	background: rgba(38, 174, 97, 0.2);
 	border-radius: 4px;
 	padding: 0px 10px;
@@ -802,7 +802,7 @@ h2 span.theme-cl{
 	position: relative;
 }
 .theme-overlap:before {
-	background: #26ae61;
+	background: #28A745;
 }
 .theme-overlap:before {
 	opacity: 0.8;
@@ -821,8 +821,8 @@ h2 span.theme-cl{
 	border-radius: 50px;
 }
 .theme-btn {
-	background: #26ae61;
-	border: 2px solid #26ae61;
+	background: #28A745;
+	border: 2px solid #28A745;
 	color: #ffffff !important;
 	text-transform: uppercase;
 	border-radius: 4px;
@@ -831,43 +831,43 @@ h2 span.theme-cl{
 	-webkit-box-shadow: 0 4px 10px 0 rgba(41,128,185,0.2);
 }
 .theme-btn:hover, .theme-btn:focus {
-	color: #26ae61 !important;
+	color: #28A745 !important;
 	background: transparent;
-	border: 2px solid #26ae61;
+	border: 2px solid #28A745;
 }
 .btn.theme-btn-outlined, a.theme-btn-outlined {
 	background: transparent;
-	border: 1px solid #26ae61;
-	color: #26ae61;
+	border: 1px solid #28A745;
+	color: #28A745;
 }
 .btn.theme-btn-outlined:hover, a.theme-btn-outlined:hover, .btn.theme-btn-outlined:focus, a.theme-btn-outlined:focus {
-	background: #26ae61;
-	border-color: #26ae61;
+	background: #28A745;
+	border-color: #28A745;
 	color: #ffffff;
 }
 .btn.theme-btn-trans-radius, a.theme-btn-trans-radius {
 	background: rgba(255, 58, 114,0.1);
-	color: #26ae61;
+	color: #28A745;
 	border-radius: 2px;
-	border: 1px solid #26ae61;
+	border: 1px solid #28A745;
 }
 .btn.theme-btn-trans-radius:hover, a.theme-btn-trans-radius:hover, .btn.theme-btn-trans-radius:focus, a.theme-btn-trans-radius:focus {
 	background: rgba(255, 58, 114,1);
 	color: #ffffff;
 	border-radius: 2px;
-	border: 1px solid #26ae61;
+	border: 1px solid #28A745;
 }
 .btn.theme-btn-trans, a.theme-btn-trans {
 	background: rgba(255, 58, 114,0.1);
-	color: #26ae61;
+	color: #28A745;
 	border-radius: 2px;
-	border: 1px solid #26ae61;
+	border: 1px solid #28A745;
 }
 .btn.theme-btn-trans:hover, a.theme-btn-trans:hover, .btn.theme-btn-trans:focus, a.theme-btn-trans:focus {
 	background: rgba(255, 58, 114,1);
 	color: #ffffff;
 	border-radius: 2px;
-	border: 1px solid #26ae61;
+	border: 1px solid #28A745;
 }
 .btn.btn-light-outlined, a.btn-light-outlined {
 	background: rgba(255,255,255,0.1);
@@ -877,16 +877,16 @@ h2 span.theme-cl{
 .btn.btn-light-outlined:hover, a.btn-light-outlined:hover, .btn.btn-light-outlined:focus, a.btn-light-outlined:focus {
 	background: rgba(255,255,255,1);
 	border: 1px solid #ffffff;
-	color: #26ae61;
+	color: #28A745;
 }
 .btn.light-btn, a.light-btn {
 	background: #ffffff;
 	border: 1px solid #ffffff;
-	color: #26ae61;
+	color: #28A745;
 }
 .btn.light-btn:hover, .btn.light-btn:focus, a.light-btn:hover, a.light-btn:focus {
-	background: #26ae61;
-	border: 1px solid #26ae61;
+	background: #28A745;
+	border: 1px solid #28A745;
 	color: #ffffff;
 }
 /*------- Global Settings: Padding Style ----------*/
@@ -1877,8 +1877,8 @@ html body .label-default {
 	transform: rotateZ(45deg);
 }
 .custom-checkbox input[type="checkbox"]:checked + label:before {
-	border-color: #26ae61;
-	background: #26ae61;
+	border-color: #28A745;
+	background: #28A745;
 }
 .custom-checkbox input[type="checkbox"]:checked + label:after {
 	border-color: #fff;
@@ -1918,7 +1918,7 @@ html body .label-default {
 	content: '';
 	width: 10px;
 	height: 10px;
-	background: #26ae61;
+	background: #28A745;
 	position: absolute;
 	top: 4px;
 	left: 4px;
@@ -2172,7 +2172,7 @@ ol.check-job > li:before, ul.check-job > li:before {
 	font-family: 'FontAwesome';
 	font-size: 1em;
 	margin-right: 7px;
-	color: #26ae61;
+	color: #28A745;
 }
 .quote-card {
 	background: #fff;
@@ -2194,7 +2194,7 @@ ol.check-job > li:before, ul.check-job > li:before {
 	margin-top: 10px;
 	display: block;
 	font-weight: 400;
-	color: #26ae61;
+	color: #28A745;
 }
 .quote-card:before {
 	font-family: Georgia, serif;
@@ -2203,7 +2203,7 @@ ol.check-job > li:before, ul.check-job > li:before {
 	top: 10px;
 	left: 10px;
 	font-size: 50px;
-	color: #26ae61;
+	color: #28A745;
 	font-weight: normal;
 }
 /*================================================
@@ -2218,10 +2218,10 @@ nav.navbar.bootsnav ul.nav > li > a {
 	text-transform: capitalize;
 }
 nav.navbar.bootsnav ul.nav > li > a:hover {
-	color: #26ae61;
+	color: #28A745;
 }
 nav.navbar.bootsnav ul.nav > li.active> a {
-	color: #26ae61;
+	color: #28A745;
 }
 @media (min-width: 1024px) {
 nav.navbar li.dropdown ul.dropdown-menu {
@@ -2243,7 +2243,7 @@ nav.navbar li.dropdown ul.dropdown-menu {
 }
 /*--------- Create Account Button  Style----------*/
 nav.navbar.bootsnav ul.nav > li >a.btn-signup.red-btn {
-	background: #26ae61;
+	background: #28A745;
 	padding: 11px 20px;
 	color: #ffffff !important;
 	border-radius: 6px;
@@ -2254,7 +2254,7 @@ nav.navbar.bootsnav ul.nav > li >a.btn-signup.red-btn span {
 	margin-right: 7px;
 }
 .utf_skin_area nav.navbar.bootsnav ul.nav > li > a.btn-signup.red-btn{
-	background-color:#26ae61 !important;
+	background-color:#28A745 !important;
 }
 i.login-icon {
 	margin-right: 10px;
@@ -2427,11 +2427,11 @@ i.login-icon {
 	height: 50px;
 	padding-left: 30px;
 	padding-right: 30px;
-	background: #26ae61;
+	background: #28A745;
 }
 .freelancer.banner .banner-btn:hover, .freelancer.banner .banner-btn:focus {
 	color: #ffffff;
-	background: #26ae61;
+	background: #28A745;
 }
 /*-------------- Home Search Form ---------*/
 .utf_home_form_one {
@@ -2505,7 +2505,7 @@ i.login-icon {
 }
 .btn-hiring:hover, .btn-hiring:focus {
 	background: #ffffff;
-	color: #26ae61;
+	color: #28A745;
 }
 /*------------ Home Form Icon Field --------------*/
 .icon-addon {
@@ -2581,7 +2581,7 @@ i.login-icon {
 	bottom: -5px;
 	width: 22px;
 	height: 22px;
-	background: #26ae61;
+	background: #28A745;
 	border-radius: 50%;
 	line-height: 20px;
 	font-size: 12px;
@@ -2705,9 +2705,9 @@ i.login-icon {
 	font-size: 12px
 }
 .job-browse-btn:hover{
-	background:#26ae61;
+	background:#28A745;
 	color:#ffffff !important;
-	border-color:#26ae61 !important;
+	border-color:#28A745 !important;
 }
 .full-type {
 	color: #1fb650!important;
@@ -2783,7 +2783,7 @@ i.login-icon {
 	position: absolute;
 	top: 15px;
 	right: 15px;
-	background:#26ae61;
+	background:#28A745;
 	width: 34px;
 	height: 34px;
 	line-height: 36px;
@@ -2865,7 +2865,7 @@ i.login-icon {
 	margin-top: 7px;
 }
 .vertical-job-header h4 a:hover {
-	color:#26ae61;
+	color:#28A745;
 }
 .vertical-job-header .com-tagline {
 	font-size: 13px;
@@ -2958,7 +2958,7 @@ img.footer-logo {
 	background: rgba(38, 174, 97, 0.5);
 }
 .skill-tag {
-	color: #26ae61;
+	color: #28A745;
 	background: rgba(38, 174, 97, 0.15);
 	border-radius: 0 2px 2px 0;
 	display: inline-block;
@@ -2983,7 +2983,7 @@ img.footer-logo {
 	width: 0;
 }
 .skill-tag:after {
-	background-color: #26ae61;
+	background-color: #28A745;
 	border-radius: 50%;
 	content: "";
 	height: 4px;
@@ -3056,10 +3056,10 @@ img.footer-logo {
 .utf_apply_job_btn_item a.job-browse-btn{
 	font-size: 12px;
 	padding: 8px 15px;
-	border:2px solid #26ae61 !important;
+	border:2px solid #28A745 !important;
 	text-transform: uppercase;
 	font-weight: 500;
-	color: #26ae61;
+	color: #28A745;
 }
 .flex-middle .ali-right {
 	margin-left: auto;
@@ -3082,7 +3082,7 @@ span.pull-right.vacancy-no {
 	top: 25px;
 }
 span.pull-right.vacancy-no span.v-count {
-	background:#26ae61;
+	background:#28A745;
 	color: #ffffff;
 	width: 30px;
 	height: 30px;
@@ -3138,16 +3138,16 @@ span.pull-right.job-type {
 	z-index: 2;
 }
 .utf_category_box_area .utf_category_desc .utf_category_icon {
-	background:#26ae61;
+	background:#28A745;
 	font-size: 40px;
 	color: #ffffff;
 	width:80px;
 	height:80px;
 	line-height:72px;
-	border:2px solid #26ae61;
+	border:2px solid #28A745;
 	border-radius:50px;
 	text-align:center;
-	margin:0 auto 20px auto;	
+	margin:0 auto 20px auto;
 	transition: 0.6s cubic-bezier(0.45, 0.01, 0.1, 1.49);
 }
 .job-apply {
@@ -3167,7 +3167,7 @@ span.pull-right.job-type {
 	margin-bottom: 5px;
 	font-size: 14px;
 	font-weight: 500;
-	color: #26ae61;
+	color: #28A745;
 	background: rgba(38, 174, 97, 0.1);
 	display: inline-block;
 	padding: 0px 10px;
@@ -3185,7 +3185,7 @@ a.btn.width-170 {
 	background: #ffffff;
 	padding: 10px;
 	border-radius: 2px;
-	color: #26ae61;
+	color: #28A745;
 	font-size: 16px;
 	font-weight: 500;
 	transition: 0.6s cubic-bezier(0.45, 0.01, 0.1, 1.49);
@@ -3249,7 +3249,7 @@ a.btn.width-170 {
 	font-weight: 500;
 }
 .u-content h5 a:hover{
-	color:#26ae61;
+	color:#28A745;
 }
 .employer-browse-btn {
 	font-size: 12px;
@@ -3277,7 +3277,7 @@ a.btn.width-170 {
 	margin-bottom:20px;
 	font-size: 38px;
 	text-align: center;
-	color: #26ae61;
+	color: #28A745;
 	background: #f5f9fc;
 	border-color: #f5f9fc;
 }
@@ -3428,12 +3428,12 @@ a.btn.width-170 {
 	position: relative;
 	bottom: 0;
 	font-size: 12px;
-	color: #26ae61;
+	color: #28A745;
 	background: rgba(38, 174, 97, 0.15);
 	display: inline-block;
 	padding: 3px 8px;
 	border-radius: 4px;
-	text-align: center;	
+	text-align: center;
 }
 /*------------ All Job Components: Filter Search Form ---------------------*/
 .search-form {
@@ -3470,7 +3470,7 @@ a.btn.width-170 {
 	margin-bottom:0;
 	font-size: 13px;
 	font-weight:500;
-	padding: 2px 10px;	
+	padding: 2px 10px;
 }
 .side-list ul li span.custom-checkbox {
 	float: none;
@@ -3510,7 +3510,7 @@ h4.job_vacancie{
 	-webkit-box-shadow: 0 5px 25px 0 rgba(41, 128, 185, 0.10);
 }
 .contact-box .contact-img{
-	transition: all 0.4s ease-in-out;    
+	transition: all 0.4s ease-in-out;
 }
 .contact-box:hover .contact-img{
 	transition: all 0.4s ease-in-out;
@@ -3522,7 +3522,7 @@ h4.job_vacancie{
 	position: absolute;
 	top: 15px;
 	right: 15px;
-	background:#26ae61;
+	background:#28A745;
 	width: 34px;
 	height: 34px;
 	line-height: 36px;
@@ -3550,7 +3550,7 @@ h4.job_vacancie{
 }
 .contact-img img{
 	border-radius: 50px;
-}	
+}
 .contact-caption {
 	text-align: center;
 	padding-bottom: 35px;
@@ -3570,7 +3570,7 @@ h4.job_vacancie{
 	text-align: center;
 }
 .contact-caption a:hover{
-	background:#26ae61;
+	background:#28A745;
 	color:#fff;
 }
 .contact-footer {
@@ -3690,16 +3690,16 @@ label {
 	margin-bottom: 10px;
 }
 .custom.dropdown button{
-	background:#26ae61;
+	background:#28A745;
 	color:#ffffff;
 	border-radius:4px;
-	border-color:#26ae61
+	border-color:#28A745
 }
 .custom.dropdown button:hover{
 	background:#ffffff;
-	color:#26ae61;
+	color:#28A745;
 	border-radius:4px;
-	border-color:#26ae61
+	border-color:#28A745
 }
 .custom .dropdown-menu>li>a {
 	padding: 10px 15px;
@@ -3771,7 +3771,7 @@ Job Detail Page Styles
 	border: 1px solid hsla(0,0%,100%,.5);
 }
 .cover-buttons .btn-outlined:hover, .cover-buttons .btn-outlined:focus {
-	color: #26ae61;
+	color: #28A745;
 	background: #ffffff;
 	border: 1px solid #ffffff;
 }
@@ -3840,7 +3840,7 @@ Job Detail Page Styles
 	margin-bottom:0;
 }
 .detail-wrapper-body h4 {
-	color:#26ae61;
+	color:#28A745;
 	background:rgba(38, 174, 97, 0.2);
 	display: inline-block;
 	padding: 5px 10px;
@@ -3915,7 +3915,7 @@ span.job-tag {
 	top: 8px;
 	text-align: center;
 	line-height: 16px;
-	background-color: #26ae61;
+	background-color: #28A745;
 	border: 2px solid transparent;
 	transition: border-color 0s;
 	border-radius: 4px;
@@ -3991,7 +3991,7 @@ button.btn.remove-field.light-gray-btn {
 	top: 5px;
 	width: 16px;
 	height: 16px;
-	border: 2px solid #26ae61;
+	border: 2px solid #28A745;
 	content: "";
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -4019,7 +4019,7 @@ button.btn.remove-field.light-gray-btn {
 	float: left;
 	width: 100%;
 	font-size: 16px;
-	color: #26ae61;
+	color: #28A745;
 	margin: 0;
 	margin-top: 0px;
 }
@@ -4077,7 +4077,7 @@ button.btn.remove-field.light-gray-btn {
 	font-size:18px;
 }
 .widget-boxed-header h4 i{
-	background:#26ae61;
+	background:#28A745;
 	color:#fff;
 	width:36px;
 	height:36px;
@@ -4090,7 +4090,7 @@ button.btn.remove-field.light-gray-btn {
 	margin-right: 10px;
 }
 .widget-boxed-header h4 a i{
-	background:#26ae61;
+	background:#28A745;
 	color:#fff;
 	width:36px;
 	height:36px;
@@ -4147,9 +4147,9 @@ ul.side-list-inline.social-side li a i {
 	-moz-box-shadow: 0 0 10px 1px rgba(71, 85, 95, .05);
 }
 ul.side-list-inline.social-side li a :hover, ul.side-list-inline.social-side li a :focus {
-	background: #26ae61;
+	background: #28A745;
 	color: #ffffff;
-	border-color:#26ae61;
+	border-color:#28A745;
 }
 .widget-boxed-body form{
 	margin-top:25px;
@@ -4158,7 +4158,7 @@ ul.side-list-inline.social-side li a :hover, ul.side-list-inline.social-side li 
 	margin-right: 5px;
 }
 /*===========================================================
-        UI Element Style 
+        UI Element Style
 ============================================================*/
 /*-------------- UI Element Style: Testimonial Style ------------------------*/
 .testimonial-detail {
@@ -4192,7 +4192,7 @@ ul.side-list-inline.social-side li a :hover, ul.side-list-inline.social-side li 
 }
 .testimonial-detail .client-rating i {
 	font-size: 12px;
-	color: #26ae61;
+	color: #28A745;
 }
 .slick-initialized .slick-slide:focus {
 	outline: none;
@@ -4231,7 +4231,7 @@ ul.side-list-inline.social-side li a :hover, ul.side-list-inline.social-side li 
 	background: #ffffff;
 	text-align: center;
 	font-size: 14px;
-	color: #26ae61;
+	color: #28A745;
 	border: 4px solid #eaeff5;
 	position: absolute;
 	top: 10px;
@@ -4290,7 +4290,7 @@ ul.side-list-inline.social-side li a :hover, ul.side-list-inline.social-side li 
 	background: #ffffff;
 	text-align: center;
 	font-size: 14px;
-	color: #26ae61;
+	color: #28A745;
 	border: 4px solid #eaeff5;
 	position: absolute;
 	top: 10px;
@@ -4317,7 +4317,7 @@ ul.side-list-inline.social-side li a :hover, ul.side-list-inline.social-side li 
 }
 #accordion2.panel-group.style-2 .panel-title a.collapsed {
 	color: #ffffff;
-	background: #26ae61;
+	background: #28A745;
 }
  @media (max-width: 1600px) {
 .utf_category_box_area-content {
@@ -4376,8 +4376,8 @@ ul.side-list-inline.social-side li a :hover, ul.side-list-inline.social-side li 
 	border-right: 1px solid #eaeff5;
 }
 .tab.style-1 .nav-tabs li a:hover, .tab.style-1 .nav-tabs li.active a {
-	color: #26ae61;
-	border-bottom: 2px solid #26ae61;
+	color: #28A745;
+	border-bottom: 2px solid #28A745;
 }
 .tab.style-1 .tab-content {
 	font-size: 14px;
@@ -4425,8 +4425,8 @@ ul.side-list-inline.social-side li a :hover, ul.side-list-inline.social-side li 
 }
 .tab.style-2 .nav-tabs li a:hover, .tab.style-2 .nav-tabs li.active a {
 	color: #ffffff;
-	border-bottom: 2px solid #26ae61;
-	background: #26ae61;
+	border-bottom: 2px solid #28A745;
+	background: #28A745;
 }
 /*------------- UI Element Style: Features Box --------------------*/
 .features-box {
@@ -4541,7 +4541,7 @@ ul.side-list-inline.social-side li a :hover, ul.side-list-inline.social-side li 
 }
 /*-------------- UI Element Style: Advance nav tab Style --------------*/
 .nav.nav-tabs.nav-advance {
-	background: #26ae61;
+	background: #28A745;
 	border-radius: 4px;
 	padding: 8px 4px;
 	max-width: 360px;
@@ -4576,7 +4576,7 @@ ul.side-list-inline.social-side li a :hover, ul.side-list-inline.social-side li 
 	border-radius:0 4px 4px 0
 }
 nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li > a:hover{
-	color:#26ae61;
+	color:#28A745;
 	background:rgba(38, 174, 97, 0.1);
 	letter-spacing:0.6px;
 }
@@ -4601,7 +4601,7 @@ nav.navbar.bootsnav li.sign-up ul.dropdown-menu::after{
 }
 .nav-tabs.nav-advance>li.active>a, .nav-tabs.nav-advance>li>a:hover, .nav-tabs.nav-advance>li>a:focus {
 	background: #ffffff !important;
-	color: #26ae61;
+	color: #28A745;
 }
 .nav-tabs.nav-advance>li>a i {
 	margin-right: 10px;
@@ -4658,12 +4658,12 @@ body .tag-content a {
 	transition: all ease .4s
 }
 .tag-content a:focus, body .tag-content a:hover {
-	color: #26ae61;
+	color: #28A745;
 	background: #fff;
 	border-color: #fff
 }
 .tag-content a:focus i, body .tag-content a:hover i {
-	color: #26ae61
+	color: #28A745
 }
 .tag-content a i {
 	margin-left: 7px
@@ -4694,7 +4694,7 @@ body .tag-content a {
 	background: #2a3646;
 }
 .active .package-header {
-	background: #26ae61;
+	background: #28A745;
 }
 .package-header i {
 	font-size: 3em;
@@ -4738,7 +4738,7 @@ sup {
 	font-size: 22px !important;
 }
 .btn.btn-package {
-	background: #26ae61;
+	background: #28A745;
 	color: #fff;
 	padding: 16px 32px;
 	border-radius: 4px;
@@ -4775,7 +4775,7 @@ button.btn.btn-package:focus, button.btn.btn-package:hover {
 	font-family: FontAwesome;
 	font-size: 12px;
 	opacity: 1;
-	color: #26ae61;
+	color: #28A745;
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
@@ -4818,10 +4818,10 @@ button.btn.btn-package:focus, button.btn.btn-package:hover {
     text-align: center;
 }
 .error-page a.theme-btn-trans {
-	background: #26ae61;
+	background: #28A745;
 	color:#ffffff;
 	border-radius: 6px;
-	border: 1px solid #26ae61;
+	border: 1px solid #28A745;
 }
 .error-page a.theme-btn-trans:hover{
 	background: #334e6f;
@@ -4930,7 +4930,7 @@ Icons Style
 	border-radius: 0;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-	color: #26ae61;
+	color: #28A745;
 	cursor: default;
 	background-color: #e8ebef;
 	border: none;
@@ -4997,7 +4997,7 @@ Icons Style
 	position:relative;
 }
 .footer h4:before {
-    background:#26ae61;
+    background:#28A745;
     border: 0 none;
     content: "";
     height: 2px;
@@ -5030,13 +5030,13 @@ Icons Style
 	transition: all 0.3s ease-in-out;
 }
 .footer .f-social-box ul li a i{
-	background: #26ae61;
+	background: #28A745;
     color: #fff;
-	border:2px solid #26ae61;
+	border:2px solid #28A745;
 }
 .footer ul li a:hover, .footer ul li a:focus {
 	opacity: 1;
-	color:#26ae61;
+	color:#28A745;
 	letter-spacing:0.6px;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -5069,8 +5069,8 @@ Icons Style
 }
 .footer .f-social-box ul li a:hover i, .footer .f-social-box ul li a:hover i:focus{
 	background: transparent;
-    color: #26ae61;
-	border:2px solid #26ae61;
+    color: #28A745;
+	border:2px solid #28A745;
 }
 .footer .f-app-box ul li a {
 	font-size: 16px;
@@ -5089,7 +5089,7 @@ Icons Style
 }
 .footer .f-app-box ul li a:hover{
 	letter-spacing:0;
-	border: 1px solid #26ae61;
+	border: 1px solid #28A745;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -5105,7 +5105,7 @@ footer .input-group {
 	border-radius: 2px;
 }
 footer.footer .input-group-btn .btn {
-	color: #26ae61;
+	color: #28A745;
 }
 footer input.form-control, footer .btn.btn-default, footer input.form-control:hover, footer .btn.btn-default:hover, footer input.form-control:focus, footer .btn.btn-default:focus {
 	height: 50px;
@@ -5115,7 +5115,7 @@ footer input.form-control, footer .btn.btn-default, footer input.form-control:ho
 .copyright {
 	padding: 25px 0;
 	margin-top: 40px;
-	border-top:1px solid #dce1e6;	
+	border-top:1px solid #dce1e6;
 }
 .copyright p {
 	font-size: 14px;
@@ -5257,8 +5257,8 @@ label {
     width: 100%;
 }
 .dashboard_nav_item ul li:hover, .dashboard_nav_item ul li.active {
-    background:#26ae61;
-    border: 2px solid #26ae61;
+    background:#28A745;
+    border: 2px solid #28A745;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 .dashboard_nav_item ul li:hover a, .dashboard_nav_item ul li.active a{
@@ -5299,7 +5299,7 @@ label {
 	width: 26px;
 	border-radius: 4px;
 	line-height: 17px;
-	color: #26ae61;
+	color: #28A745;
 }
 .dashboard_nav_item ul li:hover a i, .dashboard_nav_item ul li.active a i{
 	background: rgba(50, 215, 121, 0.5);
