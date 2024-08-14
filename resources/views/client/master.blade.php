@@ -165,7 +165,7 @@
         }
 
         .add {
-            background-color: #28a745;
+            background-color: #334e6f;
             color: white;
             border: none;
         }

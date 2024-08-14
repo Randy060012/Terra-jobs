@@ -2,7 +2,8 @@
 @section('content')
 <!-- ======================= Titre de la page ===================== -->
 <div class="page-title">
-    <div class="container">
+    <div class="container"> 
+        
         <div class="page-caption">
             <h2>Nous Contacter</h2>
             <p><a href="{{route('index')}}" title="Accueil">Accueil</a> <i class="ti-angle-double-right"></i> Contact</p>
